@@ -37,7 +37,7 @@
               type="more-vertical"
             ></feather>
           </h3>
-          <multi-radial-chart></multi-radial-chart>
+          <multi-radial-chart />
           <ul class="flex items-center justify-around">
             <li
               class="flex items-center"
@@ -76,7 +76,7 @@
         </div>
         <div class="dashboard-card flex-1 pt-3 pb-0">
           <h3 class="dashboard-card-title">收入趋势</h3>
-          <revenue-chart></revenue-chart>
+          <revenue-chart />
         </div>
       </div>
     </section>
@@ -84,7 +84,10 @@
     <!-- 第二行 -->
     <section class="row">
       <div class="w-2/3 pr-3">
-        <div class="dashboard-card p-0 flex">
+        <div
+          style="padding: 0.5rem 0.24rem;"
+          class="dashboard-card flex"
+        >
           <div
             style="border-right: 1px solid #dedede;"
             class="flex-1 flex flex-col"
@@ -100,7 +103,7 @@
               style="margin: 0 -5px -6px -5px; over-flow: hidden;"
               class="mt-auto"
             >
-              <order-summary-chart></order-summary-chart>
+              <order-summary-chart />
             </div>
           </div>
           <div class="w-1/3">
