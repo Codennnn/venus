@@ -1,0 +1,79 @@
+.hljs-comment,
+.hljs-quote {
+  @apply text-gray-500;
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-attribute,
+.hljs-tag,
+.hljs-name,
+.hljs-regexp,
+.hljs-link,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: rgba($primary, 1);
+}
+
+.hljs-number,
+.hljs-meta,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params {
+  color: rgba($warning, 1);
+}
+
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet {
+  color: rgba($secondary, 1);
+}
+
+.hljs-title,
+.hljs-section {
+  color: #478c90;
+}
+
+.hljs-keyword,
+.hljs-selector-tag {
+  color: rgba($danger, 1);
+}
+
+.hljs-deletion,
+.hljs-addition {
+  color: rgba($danger, 1);
+  display: inline-block;
+  width: 100%;
+}
+
+.hljs-deletion {
+  background-color: rgba(var(--danger-light), 1);
+}
+
+.hljs-addition {
+  background-color: rgba(var(--danger-light), 1);
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: rgba($secondary, .08);
+  color: rgba($secondary, 1);
+  padding: 1em;
+  font-family: Rubik;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  border-radius: .5rem;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}

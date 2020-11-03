@@ -1,0 +1,74 @@
+:root {
+  --primary: 100, 133, 255;
+  --secondary: 71, 95, 123;
+  --success: 87, 223, 156;
+  --warning: 253, 172, 65;
+  --danger: 255, 91, 92;
+  --info: 0, 207, 221;
+  --primary-light: 226, 236, 255;
+  --secondary-light: 230, 234, 238;
+  --success-light: 210, 255, 232;
+  --danger-light: 255, 222, 222;
+  --warning-light: 255, 238, 217;
+  --info-light: 204, 245, 248;
+}
+
+// 颜色
+$primary: #6485ff;
+$secondary: #475f7b;
+$success : #39da8a;
+$warning:#fdac41;
+$danger: #ff5b5c;
+$info: #00cfdd;
+$primary-light: #e2ecff;
+$secondary-light: #e6eaee;
+$success-light: #d2ffe8;
+$warning-light: #ffeed9;
+$danger-light: #ffdede;
+$info-light: #ccf5f8;
+$app-bg: rgb(246, 248, 251);
+$side-menu-icon-color: #626262;
+
+// 字体
+$root-font-size: 16px;
+$side-menu-icon-size: 20px;
+$side-submenu-icon-size: 16px;
+
+// 布局
+$section-gap: 1.8rem;
+$layout-min-width: 1200px;
+$sider-opened-width: 260px;
+$sider-closed-width: 80px;
+$sider-closed-padding: 0 29px;
+$header-height: 69px;
+$footer-height: 64px;
+$sider-header-height: $header-height;
+$sider-footer-height: $header-height;
+$sider-menu-height: 100vh - #{$sider-header-height} - #{$sider-footer-height};
+$full-height: calc(100vh - #{$header-height} - #{$footer-height} - 2 * #{$section-gap});
+
+$color-map: (primary: $primary,
+  secondary: $secondary,
+  success: $success,
+  warning: $warning,
+  danger: $danger,
+  info: $info,
+  primary-light: $primary-light,
+  secondary-light: $secondary-light,
+  success-light: $success-light,
+  warning-light: $warning-light,
+  danger-light: $danger-light,
+  info-light: $info-light);
+
+// 阴影
+$light-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+$base-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+$heavy-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.06);
+$header-shadow: 0 4px 20px 0 rgba(0, 0, 0, .05);
+
+// 动画
+$transition: all 0.3s;
+
+@function pxTorem($px) {
+  @return $px / $root-font-size * 1rem;
+}

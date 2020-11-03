@@ -1,0 +1,52 @@
+/*
+ * 修改浏览器默认的滚动条样式
+ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #C0C0C0;
+  border: none;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+}
+
+::selection {
+  color: inherit !important;
+  background: rgba($primary, 0.2) !important;
+}
+
+// 重设跳转进度条的颜色
+#nprogress .bar {
+  background: $primary !important;
+}
+
+.ant-message-custom-content {
+  @apply flex items-center;
+}
+
+.ant-dropdown {
+  .table-action-menu {
+    min-width: 6rem;
+
+    .ant-dropdown-menu-item {
+      @apply flex justify-center;
+    }
+  }
+}
+
+.ant-pagination.ant-table-pagination {
+  .ant-pagination-item-link {
+    @apply flex items-center justify-center;
+  }
+}
+
+.ant-table-body {
+  background: white;
+}

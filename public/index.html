@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width,initial-scale=1.0">
+  <meta name="author"
+        content="magic-ui">
+  <link rel="icon"
+        href="<%= BASE_URL %>favicon.png">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <style>
+    #app {
+      min-height: 100vh;
+    }
+
+    [v-cloak] {
+      position: relative;
+      height: 100vh;
+    }
+
+    [v-cloak]>* {
+      display: none;
+    }
+
+    [v-cloak]::before {
+      content: "页面正在加载中...";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 30px;
+      font-weight: bold;
+      color: #626262;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+      Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"
+       v-cloak></div>
+  <!-- require cdn assets js -->
+  <% for (var i in htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.js) { %>
+  <script type="text/javascript"
+          src="<%= htmlWebpackPlugin.options.cdn.js[i] %>"></script>
+  <% } %>
+  <!-- built files will be auto injected -->
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+html,
+body {
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: $root-font-size;
+}
+
+body {
+  height: initial !important;
+  min-height: 100%;
+}
+
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+#app {
+  @apply min-h-screen;
+  background: $app-bg;
+}
+
+.transition {
+  transition: $transition;
+}
+
+.section-card {
+  @apply p-6 rounded-lg bg-white overflow-auto;
+
+  &__title {
+    @apply mb-3 text-2xl font-bold;
+    color: rgba($secondary, .8);
+  }
+}
+
+// vue 过渡动画样式
+.sale-fade-enter-active,
+.sale-fade-leave-active {
+  transition: all 0.3s ease;
+}
+
+.sale-fade-enter {
+  transform: scale(0.97);
+  // transform: translateX(-10px);
+  opacity: 0;
+}
+
+.sale-fade-leave-to {
+  transform: scale(1.03);
+  // transform: translateX(10px);
+  opacity: 0;
+}
+
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.3s ease;
+}
+
+.slide-fade-enter {
+  transform: translateX(-10px);
+  opacity: 0;
+}
+
+.slide-fade-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}

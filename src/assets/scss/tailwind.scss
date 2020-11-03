@@ -1,0 +1,35 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+
+@tailwind utilities;
+
+@variants hover,
+focus {
+
+  @each $color in primary,
+  secondary,
+  success,
+  warning,
+  danger,
+  info,
+  primary-light,
+  secondary-light,
+  success-light,
+  warning-light,
+  danger-light,
+  info-light {
+    .#{$color} {
+      color: map-get($color-map, $color) !important;
+    }
+
+    .bg-#{$color} {
+      background-color: map-get($color-map, $color) !important;
+    }
+  }
+}
+
+button:focus {
+  outline: none;
+}
