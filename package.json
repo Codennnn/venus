@@ -10,6 +10,7 @@
     "build:analyze": "vue-cli-service build --mode analyze",
     "build:modern": "vue-cli-service build --modern",
     "build:preview": "vue-cli-service build --mode preview",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
     "lint": "vue-cli-service lint",
     "test": "vue-cli-service test:unit"
   },
@@ -63,6 +64,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "less-loader": "^6.1.0",
     "node-sass": "^4.12.0",
+    "push-dir": "^0.4.1",
     "sass-loader": "^10.0.3",
     "vue-template-compiler": "^2.6.11",
     "webpack-bundle-analyzer": "^3.8.0"
