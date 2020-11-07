@@ -85,12 +85,12 @@
     <section class="row">
       <div class="w-2/3 pr-3">
         <div
-          style="padding: 0.5rem 0.24rem;"
+          style="padding: 0.5rem 0;"
           class="dashboard-card flex"
         >
           <div
             style="border-right: 1px solid #dedede;"
-            class="flex-1 flex flex-col"
+            class="flex-1 flex flex-col overflow-hidden"
           >
             <h3 class="dashboard-card-title px-6 py-4">
               订单概况
