@@ -243,8 +243,10 @@ export const asyncRoutes = [
     single: true,
     children: [
       {
-        path: process.env.VUE_APP_PROJECT_URL,
-        meta: { title: '前往 Github', icon: 'github' },
+        path: '/disabled',
+        name: 'Disabled',
+        disabled: true,
+        meta: { title: '被禁用的菜单', icon: 'zap-off' },
       },
     ],
   },
@@ -255,10 +257,20 @@ export const asyncRoutes = [
     single: true,
     children: [
       {
-        path: '/disabled',
-        name: 'Disabled',
-        disabled: true,
-        meta: { title: '被禁用的菜单', icon: 'zap-off' },
+        path: process.env.VUE_APP_PROJECT_URL,
+        meta: { title: 'Github 仓库', icon: 'github' },
+      },
+    ],
+  },
+
+  {
+    path: '',
+    component: MainLayout,
+    single: true,
+    children: [
+      {
+        path: process.env.VUE_APP_DOC_URL,
+        meta: { title: '官方文档', icon: 'book-open' },
       },
     ],
   },

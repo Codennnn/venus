@@ -24,7 +24,7 @@ export default {
 
   data: () => ({
     projectUrl: process.env.VUE_APP_PROJECT_URL,
-    docUrl: process.env.VUE_APP_PROJECT_URL,
+    docUrl: process.env.VUE_APP_DOC_URL,
   }),
 }
 </script>
