@@ -44,13 +44,11 @@ img {
 
 .sale-fade-enter {
   transform: scale(0.97);
-  // transform: translateX(-10px);
   opacity: 0;
 }
 
 .sale-fade-leave-to {
   transform: scale(1.03);
-  // transform: translateX(10px);
   opacity: 0;
 }
 

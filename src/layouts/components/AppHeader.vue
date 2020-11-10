@@ -74,6 +74,7 @@
 
 <script>
 import screenfull from 'screenfull'
+import { isValidUrl } from '@/utils/util'
 import HeaderSearch from './app-header/HeaderSearc.vue'
 import HeaderNotice from './app-header/HeaderNotice.vue'
 
@@ -89,7 +90,7 @@ export default {
     ],
     menuItems: [
       {
-        label: '测试页面', name: 'Test', icon: 'github',
+        label: '官方文档', name: 'https://docs.leoku.top', icon: 'book-open',
       },
       {
         label: '个人中心', name: 'Profile', icon: 'user',
@@ -131,6 +132,8 @@ export default {
     onClickMenuItem(name, click) {
       if (click) {
         this[click]()
+      } else if (isValidUrl(name)) {
+        window.open(name, '_blank', 'noopener')
       } else {
         this.$router.push({ name })
       }
