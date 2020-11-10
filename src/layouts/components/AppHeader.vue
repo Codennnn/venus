@@ -18,7 +18,11 @@
 
     <div class="setting">
       <div class="flex items-center">
-        <header-search />
+        <header-search ref="headerSearch" />
+        <feather
+          type="search"
+          @click="$refs.headerSearch.onOpenSearch()"
+        />
         <feather
           class="mx-4"
           :type="isFullScreen ? 'minimize' : 'maximize'"
@@ -75,7 +79,7 @@
 <script>
 import screenfull from 'screenfull'
 import { isValidUrl } from '@/utils/util'
-import HeaderSearch from './app-header/HeaderSearc.vue'
+import HeaderSearch from './app-header/HeaderSearch.vue'
 import HeaderNotice from './app-header/HeaderNotice.vue'
 
 export default {
@@ -150,7 +154,7 @@ export default {
 
 <style lang="scss" scoped>
 .app-header {
-  @apply w-full h-full flex items-center bg-transparent;
+  @apply relative w-full h-full flex items-center bg-transparent;
 }
 
 .setting {
