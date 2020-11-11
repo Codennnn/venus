@@ -5,9 +5,9 @@ import router from './router/router'
 import store from './store/store'
 
 import './router/control'
+import './plugins'
 import '@/assets/scss/reset.scss'
 import '@/assets/scss/common.scss'
-import './plugins'
 import './directives' // 自定义指令
 
 Vue.config.errorHandler = errorHandler

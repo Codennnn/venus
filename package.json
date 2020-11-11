@@ -22,7 +22,6 @@
     "apexcharts": "^3.19.2",
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
-    "cytoscape": "^3.16.1",
     "dayjs": "^1.8.27",
     "echarts": "^4.9.0",
     "feather-icons": "^4.28.0",
