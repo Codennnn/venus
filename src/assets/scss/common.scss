@@ -66,3 +66,18 @@ img {
   transform: translateX(10px);
   opacity: 0;
 }
+
+.sale-down-enter-active,
+.sale-down-leave-active {
+  transition: all 0.3s ease;
+}
+
+.sale-down-enter {
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
+.sale-down-leave-to {
+  transform: translateY(-10px);
+  opacity: 0;
+}

@@ -18,15 +18,6 @@ window.addEventListener('unhandledrejection', (e) => {
   e.preventDefault()
 })
 
-if (process.env.NODE_ENV === 'production') {
-  console.warn(`%c
-  通过以下方式可联系作者👇🏼：
-  微信：leoku_new
-  邮箱：czc12580520@gmail.com / 1559162803@qq.com
-  欢迎学习交流
-  `, 'font-size: 16px;')
-}
-
 new Vue({
   router,
   store,
