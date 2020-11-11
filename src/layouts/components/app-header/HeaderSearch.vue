@@ -6,7 +6,7 @@
     <div
       v-show="show"
       class="search-wrapper"
-      :class="{ 'full': isSideMenuOpened}"
+      :class="{ 'full': isSideMenuOpened }"
     >
       <feather
         class="icon-search"
@@ -22,7 +22,7 @@
         ref="searchInput"
         v-model="searchContent"
         placeholder="您想了解什么？"
-        @keydown.enter="searchContent.length > 0 && $message.info(`您输入了：${searchContent}`)"
+        @keydown.enter="onSearch"
         @blur="onCloseSearch"
       />
     </div>
@@ -60,6 +60,7 @@ export default {
     onSearch() {
       if (this.searchContent.length > 0) {
         // TODO: 通过获取 this.searchContent 执行搜索逻辑
+        this.$message.info(`您输入了：${this.searchContent}`)
       }
     },
   },
