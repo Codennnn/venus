@@ -62,14 +62,15 @@
       <div class="flex justify-center items-center">
         <img
           class="app-icon"
-          v-for="({ src, alt }) in [
-          { alt: 'wechat', src: require('@img/wechat.svg') },
-          { alt: 'qq', src: require('@img/qq.svg') },
-          { alt: 'gitee', src: require('@img/gitee.svg') },
+          v-for="({ src, name }) in [
+          { name: '微信', src: require('@img/wechat.svg') },
+          { name: '新浪微博', src: require('@img/weibo.svg') },
+          { name: 'GitHub', src: require('@img/github.svg') },
         ]"
-          :key="alt"
+          :key="name"
           :src="src"
-          :alt="alt"
+          :alt="name"
+          :title="name"
         >
       </div>
     </a-form>
