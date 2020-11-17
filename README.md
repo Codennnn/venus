@@ -13,6 +13,8 @@
 <h1 align="center">Venus Admin</h1>
 
 ## 介绍
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FChinesee%2Fvenus.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FChinesee%2Fvenus?ref=badge_shield)
+
 
 Venus 是由 Vue.js 驱动的中后台系统模板，凝聚了许多常用功能的具体实现，优秀的设计语言和高质量的代码绝对能让你眼前一亮。
 
@@ -31,3 +33,7 @@ https://cn.docs.leoku.top/
 
 ### GitHub Pages
 https://docs.leoku.top/
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FChinesee%2Fvenus.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FChinesee%2Fvenus?ref=badge_large)
