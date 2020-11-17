@@ -18,15 +18,15 @@ Venus 是由 Vue.js 驱动的中后台系统模板，凝聚了许多常用功能
 
 ## 在线预览
 
-https://venus.leoku.top/ （GitHub Pages）
+https://venus.leoku.top/ [GitHub Pages]
 
-https://cn.venus.leoku.top/ （国内站点）
+https://cn.venus.leoku.top/ [国内站点]
 
 ## 文档地址
 
-https://docs.leoku.top/ （GitHub Pages）
+https://docs.leoku.top/ [GitHub Pages]
 
-https://cn.docs.leoku.top/（国内站点）
+https://cn.docs.leoku.top/ [国内站点]
 
 ## License
 
