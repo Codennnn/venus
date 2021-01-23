@@ -18,16 +18,16 @@ Venus 是由 Vue.js 驱动的中后台系统模板，凝聚了许多常用功能
 
 ## 在线预览
 
-### 国内站点
-https://cn.venus.leoku.top/
+https://venus.leoku.top/ [GitHub Pages]
 
-### GitHub Pages
-https://venus.leoku.top/
+https://cn.venus.leoku.top/ [国内站点]
 
 ## 文档地址
 
-### 国内站点
-https://cn.docs.leoku.top/
+https://docs.leoku.top/ [GitHub Pages]
 
-### GitHub Pages
-https://docs.leoku.top/
+https://cn.docs.leoku.top/ [国内站点]
+
+## License
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FChinesee%2Fvenus.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FChinesee%2Fvenus?ref=badge_large)

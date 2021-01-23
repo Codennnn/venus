@@ -1,0 +1,16 @@
+on: push
+name: Sync GitHub repository to Gitee
+jobs:
+  run:
+    name: Run
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout source codes
+      uses: Yikun/hub-mirror-action@master
+      with:
+        src: github/Chinesee
+        dst: gitee/chinesee
+        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+        dst_token:  ${{ secrets.GITEE_TOKEN }}
+        static_list: 'venus'
+        force_update: true
