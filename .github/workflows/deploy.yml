@@ -39,7 +39,7 @@ jobs:
     - name: Push to gh-pages
       env:
         # 填写项目所在仓库地址
-        GITHUB_REPO: github.com/Chinesee/venus.git
+        GITHUB_REPO: github.com/Codennnn/venus.git
       run: |
         cd ./dist
         git init
