@@ -1,22 +1,13 @@
 <template>
   <main class="main-layout">
     <!-- 侧边栏 -->
-    <aside
-      class="the-aside"
-      :class="menuStatusClass"
-    >
+    <aside class="the-aside" :class="menuStatusClass">
       <app-sider />
     </aside>
 
-    <section
-      class="the-section"
-      :class="menuStatusClass"
-    >
+    <section class="the-section" :class="menuStatusClass">
       <!-- 顶部导航 -->
-      <header
-        class="the-header"
-        :class="[menuStatusClass, { 'fixed-top': isHeaderFixed }]"
-      >
+      <header class="the-header" :class="[menuStatusClass, { 'fixed-top': isHeaderFixed }]">
         <app-header />
       </header>
 
@@ -24,14 +15,8 @@
       <main class="the-main">
         <Breadcrumb class="mb-4" />
 
-        <transition
-          name="sale-fade"
-          mode="out-in"
-        >
-          <keep-alive
-            :include="alivePages"
-            :max="5"
-          >
+        <transition name="sale-fade" mode="out-in">
+          <keep-alive :include="alivePages" :max="5">
             <router-view />
           </keep-alive>
         </transition>
@@ -87,7 +72,8 @@ export default {
 
     // 观察滚动距离，调整顶部导航栏背景色
     window.onscroll = _debounce(() => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
       if (scrollTop > 10) {
         this.$store.commit('SET_HEADER_STATUS', true)
       } else {
@@ -147,9 +133,7 @@ $main-close-margin-left: pxTorem($sider-closed-width) + $section-gap;
 
 .the-main {
   @apply h-full min-w-full;
-  min-height: calc(
-    100vh - #{$header-height} - #{$footer-height} - 2 * #{$section-gap}
-  );
+  min-height: calc(100vh - #{$header-height} - #{$footer-height} - 2 * #{$section-gap});
 }
 
 .the-footer {

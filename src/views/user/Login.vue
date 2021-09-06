@@ -1,10 +1,6 @@
 <template>
   <div class="flex flex-col items-center justify-center">
-    <a-form
-      class="login-form"
-      :form="form"
-      @submit="onLogin"
-    >
+    <a-form class="login-form" :form="form" @submit="onLogin">
       <a-form-item
         v-for="({ icon, decorator, size = 'large', placeholder, type = 'text' }, i) in formItems"
         :key="i"
@@ -19,27 +15,18 @@
           @keyup.caps-lock="onSwitchCapture(i, $event)"
         >
           <template #prefix>
-            <feather
-              stroke="#aaa"
-              size="20"
-              :type="icon"
-            />
+            <feather stroke="#aaa" size="20" :type="icon" />
           </template>
         </a-input>
         <p
           v-if="i === 1 && showInputTooltip"
           class="flex items-center justify-end text-gray-500 text-sm"
         >
-          <feather
-            stroke="#fdac41"
-            size="18"
-            type="info"
-            class="mr-1"
-          />
+          <feather stroke="#fdac41" size="18" type="info" class="mr-1" />
           键盘大写已锁定
         </p>
       </a-form-item>
-      <a-form-item style="margin: -15px 0 5px 0;">
+      <a-form-item style="margin: -15px 0 5px 0">
         <div class="flex justify-between">
           <a-checkbox v-decorator="['rememberMe', { valuePropName: 'checked' }]">
             保持登录状态
@@ -48,22 +35,14 @@
         </div>
       </a-form-item>
       <a-form-item>
-        <a-button
-          class="w-full"
-          size="large"
-          type="primary"
-          html-type="submit"
-          :loading="loading"
-        >
+        <a-button class="w-full" size="large" type="primary" html-type="submit" :loading="loading">
           立即登录
         </a-button>
       </a-form-item>
-      <a-divider class="text-gray-500">
-        或使用以下方式登录
-      </a-divider>
+      <a-divider class="text-gray-500"> 或使用以下方式登录 </a-divider>
       <div class="flex justify-center items-center">
         <img
-          v-for="({ src, name }) in [
+          v-for="{ src, name } in [
             { name: '微信', src: require('@img/wechat.svg') },
             { name: '新浪微博', src: require('@img/weibo.svg') },
             { name: 'GitHub', src: require('@img/github.svg') },
@@ -73,7 +52,7 @@
           :src="src"
           :alt="name"
           :title="name"
-        >
+        />
       </div>
     </a-form>
   </div>
@@ -89,19 +68,13 @@ export default {
         {
           icon: 'user',
           placeholder: '登录账号',
-          decorator: [
-            'username',
-            { rules: [{ required: true, message: '请输入账号' }] },
-          ],
+          decorator: ['username', { rules: [{ required: true, message: '请输入账号' }] }],
         },
         {
           icon: 'lock',
           placeholder: '登录密码',
           type: 'password',
-          decorator: [
-            'password',
-            { rules: [{ required: true, message: '请输入密码' }] },
-          ],
+          decorator: ['password', { rules: [{ required: true, message: '请输入密码' }] }],
         },
       ],
       form: this.$form.createForm(this),

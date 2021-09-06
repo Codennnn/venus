@@ -1,10 +1,6 @@
 <template>
   <div id="components-form-demo-advanced-search">
-    <a-form
-      layout="inline"
-      :form="form"
-      @submit="handleSearch"
-    >
+    <a-form layout="inline" :form="form" @submit="handleSearch">
       <div class="flex flex-wrap">
         <div
           v-for="i in 10"
@@ -13,40 +9,18 @@
           :style="{ display: i < count ? 'block' : 'none' }"
         >
           <a-form-item :label="`字段 ${i}`">
-            <a-input
-              v-decorator="[
-                `field-${i}`,
-              ]"
-              :placeholder="`field-${i}`"
-            />
+            <a-input v-decorator="[`field-${i}`]" :placeholder="`field-${i}`" />
           </a-form-item>
         </div>
       </div>
 
       <div class="flex items-center justify-end">
-        <div
-          class="mr-4 flex items-center cursor-pointer"
-          @click="toggle"
-        >
+        <div class="mr-4 flex items-center cursor-pointer" @click="toggle">
           {{ expand ? '收起' : '展开' }}
-          <feather
-            class="ml-1"
-            size="16"
-            :type="expand ? 'chevron-up' : 'chevron-down'"
-          />
+          <feather class="ml-1" size="16" :type="expand ? 'chevron-up' : 'chevron-down'" />
         </div>
-        <a-button
-          class="mr-4"
-          @click="handleReset"
-        >
-          重置
-        </a-button>
-        <a-button
-          type="primary"
-          html-type="submit"
-        >
-          搜索
-        </a-button>
+        <a-button class="mr-4" @click="handleReset"> 重置 </a-button>
+        <a-button type="primary" html-type="submit"> 搜索 </a-button>
       </div>
     </a-form>
   </div>

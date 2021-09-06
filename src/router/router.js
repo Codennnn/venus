@@ -313,11 +313,12 @@ export const asyncRoutes = [
   { path: '*', redirect: '/not-found', hidden: true },
 ]
 
-const createRouter = () => new VueRouter({
-  mode: process.env.VUE_APP_ROUTER_MODE || 'history',
-  base: process.env.BASE_URL,
-  routes: constantRoutes,
-})
+const createRouter = () =>
+  new VueRouter({
+    mode: process.env.VUE_APP_ROUTER_MODE || 'history',
+    base: process.env.BASE_URL,
+    routes: constantRoutes,
+  })
 
 const router = createRouter()
 

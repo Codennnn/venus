@@ -2,11 +2,7 @@
   <main class="user-layout">
     <section class="user-layout-section">
       <div class="mb-8 flex justify-center items-center select-none">
-        <img
-          class="w-10"
-          src="@img/logo.png"
-          alt="LOGO"
-        >
+        <img class="w-10" src="@img/logo.png" alt="LOGO" />
         <span class="ml-3 text-3xl font-bold">Venus</span>
       </div>
       <div class="user-layout-content">
@@ -14,20 +10,13 @@
           class="tabs select-none"
           default-active-key="Login"
           :active-key="activeKey"
-          :animated="{tabPane:false}"
+          :animated="{ tabPane: false }"
           @change="onTabChange"
         >
-          <a-tab-pane
-            key="Login"
-            tab="登录"
-          >
+          <a-tab-pane key="Login" tab="登录">
             <router-view name="login" />
           </a-tab-pane>
-          <a-tab-pane
-            key="Register"
-            force-render
-            tab="注册"
-          >
+          <a-tab-pane key="Register" force-render tab="注册">
             <router-view name="register" />
           </a-tab-pane>
         </a-tabs>
@@ -46,7 +35,9 @@ export default {
 
   watch: {
     '$route.name': {
-      handler(name) { this.activeKey = name },
+      handler(name) {
+        this.activeKey = name
+      },
       immediate: true,
     },
   },

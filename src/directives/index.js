@@ -2,9 +2,7 @@ import Vue from 'vue'
 import store from '@/store/store'
 import { isArray } from '@/utils/util'
 
-export function defaultFunc() {
-
-}
+export function defaultFunc() {}
 
 export function hasPermission(permission) {
   if (typeof permission === 'string') {

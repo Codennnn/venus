@@ -1,8 +1,5 @@
 <template>
-  <transition-group
-    name="flip-list"
-    :tag="tag"
-  >
+  <transition-group name="flip-list" :tag="tag">
     <slot />
   </transition-group>
 </template>

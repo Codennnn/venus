@@ -1,10 +1,5 @@
 <template>
-  <apexchart
-    type="line"
-    height="40"
-    :options="warningLineChartOption"
-    :series="series"
-  />
+  <apexchart type="line" height="40" :options="warningLineChartOption" :series="series" />
 </template>
 
 <script>
@@ -14,9 +9,11 @@ export default {
   props: {
     series: {
       type: Array,
-      default: () => [{
-        data: [30, 60, 30, 80, 20, 70],
-      }],
+      default: () => [
+        {
+          data: [30, 60, 30, 80, 20, 70],
+        },
+      ],
     },
   },
 

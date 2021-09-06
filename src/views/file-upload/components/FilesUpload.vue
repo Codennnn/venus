@@ -1,8 +1,6 @@
 <template>
   <div>
-    <p class="mb-4">
-      经典款式，用户点击按钮弹出文件选择框
-    </p>
+    <p class="mb-4">经典款式，用户点击按钮弹出文件选择框</p>
     <a-upload
       multiple
       name="file"

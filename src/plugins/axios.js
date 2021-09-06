@@ -17,35 +17,29 @@ const service = axios.create({
   withCredentials: true,
 })
 
-service.interceptors.request.use(
-  (config) => {
-    const token = getToken()
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`
+service.interceptors.request.use((config) => {
+  const token = getToken()
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`
+  }
+  return config
+}, errorHandler)
+
+service.interceptors.response.use((response) => {
+  const { data } = response
+
+  const { code, message = '接口异常' } = data
+  if (code !== 2000) {
+    Message.warning(message)
+
+    if (code === 4018) {
+      removeToken()
+      window.location.reload()
     }
-    return config
-  },
-  errorHandler,
-)
 
-service.interceptors.response.use(
-  (response) => {
-    const { data } = response
-
-    const { code, message = '接口异常' } = data
-    if (code !== 2000) {
-      Message.warning(message)
-
-      if (code === 4018) {
-        removeToken()
-        window.location.reload()
-      }
-
-      return Promise.reject(data)
-    }
-    return data
-  },
-  errorHandler,
-)
+    return Promise.reject(data)
+  }
+  return data
+}, errorHandler)
 
 export default service

@@ -3,7 +3,7 @@
     <div class="flex items-end">
       <vue-cropper
         ref="cropper"
-        style="width: 300px; height: 300px;"
+        style="width: 300px; height: 300px"
         output-type="jpeg"
         mode="cover"
         :info="false"
@@ -19,42 +19,32 @@
         @realTime="realTime"
       />
 
-      <div
-        v-if="showPreview"
-        class="ml-8 text-center"
-      >
+      <div v-if="showPreview" class="ml-8 text-center">
         <div :style="previewStyle1">
           <div :style="previews.div">
             <img
               alt="头像预览"
-              style="max-width: initial;"
+              style="max-width: initial"
               :style="previews.img"
               :src="previews.url"
-            >
+            />
           </div>
         </div>
-        <p class="mt-4 text-gray-600">
-          250 X 250
-        </p>
+        <p class="mt-4 text-gray-600">250 X 250</p>
       </div>
 
-      <div
-        v-if="showPreview"
-        class="ml-8 text-center"
-      >
+      <div v-if="showPreview" class="ml-8 text-center">
         <div :style="previewStyle2">
           <div :style="previews.div">
             <img
               alt="头像预览"
-              style="max-width: initial;"
+              style="max-width: initial"
               :style="previews.img"
               :src="previews.url"
-            >
+            />
           </div>
         </div>
-        <p class="mt-4 text-gray-600">
-          150 X 150
-        </p>
+        <p class="mt-4 text-gray-600">150 X 150</p>
       </div>
     </div>
 
@@ -83,7 +73,7 @@
 <script>
 import { VueCropper } from 'vue-cropper'
 
-import { uploadImage } from '@/api/common'
+import { uploadImage } from '@/services/common'
 
 export default {
   name: 'AvatarUpload',
@@ -109,7 +99,7 @@ export default {
 
   methods: {
     beforeUpload(file) {
-      const isLt2M = (file.size < 2 * 1024 * 1024)
+      const isLt2M = file.size < 2 * 1024 * 1024
 
       if (isLt2M) {
         // 转为 base64 图片格式进行预览
@@ -139,10 +129,12 @@ export default {
         boxShadow: '0 0 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
       }
       this.previewStyle1 = {
-        ...previewStyle, zoom: 250 / data.w,
+        ...previewStyle,
+        zoom: 250 / data.w,
       }
       this.previewStyle2 = {
-        ...previewStyle, zoom: 150 / data.w,
+        ...previewStyle,
+        zoom: 150 / data.w,
       }
     },
 

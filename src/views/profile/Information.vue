@@ -1,12 +1,8 @@
 <template>
   <div>
-    <a-form
-      hide-required-mark
-      class="account-form"
-      :form="form"
-    >
+    <a-form hide-required-mark class="account-form" :form="form">
       <a-form-item
-        v-for="({ label, decorator, size='large', placeholder }) in formItems"
+        v-for="{ label, decorator, size = 'large', placeholder } in formItems"
         :key="decorator[0]"
         class="account-form__item"
         :label="label"
@@ -56,5 +52,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

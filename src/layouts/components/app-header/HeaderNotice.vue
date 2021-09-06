@@ -1,15 +1,9 @@
 <template>
-  <a-popover
-    v-model="visible"
-    trigger="click"
-    placement="bottom"
-  >
+  <a-popover v-model="visible" trigger="click" placement="bottom">
     <template #content>
       <div class="w-64">
         <div class="flex justify-between items-center">
-          <div class="text-gray-900">
-            5 条新通知
-          </div>
+          <div class="text-gray-900">5 条新通知</div>
           <div
             class="text-gray-500 hover:primary transition cursor-pointer"
             @click="setAllNoticeRead()"
@@ -23,14 +17,14 @@
         <a-spin :spinning="spinning">
           <ul class="notice-list -mx-4 px-2">
             <li
-              v-for="({ id, title, time, type }) in noticeList"
+              v-for="{ id, title, time, type } in noticeList"
               :key="id"
               class="p-2 flex items-center text-sm rounded cursor-pointer transition"
               :class="`hover-${noticeTypes[type].color}`"
             >
               <div
                 class="mr-4 flex items-center justify-center rounded-full"
-                style="padding: 0.35rem;"
+                style="padding: 0.35rem"
                 :class="`bg-${noticeTypes[type].color}-light`"
               >
                 <feather
@@ -58,10 +52,7 @@
         </div>
       </div>
     </template>
-    <a-badge
-      dot
-      class="mt-1"
-    >
+    <a-badge dot class="mt-1">
       <feather type="bell" />
     </a-badge>
   </a-popover>
@@ -76,19 +67,34 @@ export default {
     spinning: false,
     noticeList: [
       {
-        id: '1', title: '订单已创建', time: '2 分钟前', type: 'primary',
+        id: '1',
+        title: '订单已创建',
+        time: '2 分钟前',
+        type: 'primary',
       },
       {
-        id: '2', title: '系统升级程序已准备就绪', time: '30 分钟前', type: 'success',
+        id: '2',
+        title: '系统升级程序已准备就绪',
+        time: '30 分钟前',
+        type: 'success',
       },
       {
-        id: '3', title: '今日剩余 3 项待办事项', time: '1 小时前', type: 'warning',
+        id: '3',
+        title: '今日剩余 3 项待办事项',
+        time: '1 小时前',
+        type: 'warning',
       },
       {
-        id: '4', title: '系统存在 2 个安全隐患', time: '5 小时前', type: 'danger',
+        id: '4',
+        title: '系统存在 2 个安全隐患',
+        time: '5 小时前',
+        type: 'danger',
       },
       {
-        id: '5', title: '6 个文件已完成下载', time: '2020-08-01', type: 'info',
+        id: '5',
+        title: '6 个文件已完成下载',
+        time: '2020-08-01',
+        type: 'info',
       },
     ],
     noticeTypes: {

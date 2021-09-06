@@ -1,5 +1,5 @@
 import { setToken, removeToken } from '@/utils/token'
-import { login, logout, getUserInfo } from '@/api/user'
+import { login, logout, getUserInfo } from '@/services/user'
 import { resetRouter } from '@/router/router'
 
 const state = {
@@ -19,7 +19,9 @@ const mutations = {
 const actions = {
   async login(_, { account, password }) {
     try {
-      const { data: { token } } = await login({ account, password })
+      const {
+        data: { token },
+      } = await login({ account, password })
       setToken(token)
       return true
     } catch {

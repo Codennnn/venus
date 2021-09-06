@@ -1,23 +1,16 @@
 <template>
-  <div
-    class="a"
-    @click="$router.push('/skeleton')"
-  >
-    123
-  </div>
+  <div class="a" @click="$router.push('/skeleton')">123</div>
 </template>
 
 <script>
 export default {
-  components: {
-  },
+  components: {},
   data() {
     return {
       show: true,
     }
   },
-  methods: {
-  },
+  methods: {},
 }
 </script>
 

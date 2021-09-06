@@ -1,11 +1,10 @@
 <template>
   <div>
     <div class="section-card mb-6">
-      <h3 class="section-card__title">
-        3D 地图
-      </h3>
+      <h3 class="section-card__title">3D 地图</h3>
       <p class="mt-6 mb-2">
-        开启 3D 地图视图效果，需要引用 JSAPI v1.4.0 以上版本的JSAPI，同时在 Map 初始化的时候给地图 viewMode:3D 属性
+        开启 3D 地图视图效果，需要引用 JSAPI v1.4.0 以上版本的JSAPI，同时在 Map 初始化的时候给地图
+        viewMode:3D 属性
       </p>
       <pre v-highlightjs><code class="javascript">{{ `const map = new AMap.Map('container', {
     pitch:75, // 地图俯仰角度，有效范围 0 度- 83 度
@@ -13,19 +12,14 @@
 })` }}</code></pre>
     </div>
     <div class="mb-16">
-      <div
-        id="map-demo-3d"
-        class="w-full"
-        style="height: 400px;"
-      />
+      <div id="map-demo-3d" class="w-full" style="height: 400px" />
     </div>
 
     <div class="section-card mb-6">
-      <h3 class="section-card__title">
-        武汉市车辆密度图
-      </h3>
+      <h3 class="section-card__title">武汉市车辆密度图</h3>
       <p class="mt-6 mb-2">
-        开启 3D 地图视图效果，需要引用 JSAPI v1.4.0 以上版本的JSAPI，同时在 Map 初始化的时候给地图 viewMode:3D 属性
+        开启 3D 地图视图效果，需要引用 JSAPI v1.4.0 以上版本的JSAPI，同时在 Map 初始化的时候给地图
+        viewMode:3D 属性
       </p>
       <pre v-highlightjs><code class="javascript">{{ `const layer = new Loca.PointCloudLayer({
     map: this.mapDemoPoint,
@@ -50,15 +44,9 @@ layer.setOptions({
 
 layer.render()` }}</code></pre>
 
-      <p class="mt-4 mb-2">
-        效果如下：
-      </p>
+      <p class="mt-4 mb-2">效果如下：</p>
       <div class="rounded-lg overflow-hidden">
-        <div
-          id="map-demo-point"
-          class="w-full"
-          style="height: 600px;"
-        />
+        <div id="map-demo-point" class="w-full" style="height: 600px" />
       </div>
     </div>
   </div>
@@ -121,13 +109,16 @@ export default {
           pitch: 50,
           rotation: -15,
         })
-        AMap.plugin(['AMap.Scale', 'AMap.ControlBar'], () => { // 异步同时加载多个插件
-          this.mapDemo3D.addControl(new AMap.ControlBar({
-            position: {
-              right: '10px',
-              top: '10px',
-            },
-          }))
+        AMap.plugin(['AMap.Scale', 'AMap.ControlBar'], () => {
+          // 异步同时加载多个插件
+          this.mapDemo3D.addControl(
+            new AMap.ControlBar({
+              position: {
+                right: '10px',
+                top: '10px',
+              },
+            })
+          )
           this.mapDemo3D.addControl(new AMap.Scale())
         })
         this.mapDemo3D.on('complete', () => {

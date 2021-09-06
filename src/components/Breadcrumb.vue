@@ -1,9 +1,6 @@
 <template>
   <a-breadcrumb v-if="breadcrumbList.length > 0">
-    <a-breadcrumb-item
-      v-for="({ title }, i) in breadcrumbList"
-      :key="i"
-    >
+    <a-breadcrumb-item v-for="({ title }, i) in breadcrumbList" :key="i">
       {{ title }}
     </a-breadcrumb-item>
   </a-breadcrumb>
@@ -13,8 +10,7 @@
 export default {
   name: 'Breadcrumb',
 
-  data: () => ({
-  }),
+  data: () => ({}),
 
   computed: {
     breadcrumbList() {
@@ -22,7 +18,8 @@ export default {
         return this.$route.meta.breadcrumb.map((item) => {
           if (typeof item === 'string') {
             return { title: item }
-          } if (item.path) {
+          }
+          if (item.path) {
             return item
           }
           return {}

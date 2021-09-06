@@ -1,9 +1,6 @@
 <template>
   <div class="app-sider">
-    <SiderHeader
-      class="app-sider-header"
-      :is-side-menu-opened="isSideMenuOpened"
-    />
+    <SiderHeader class="app-sider-header" :is-side-menu-opened="isSideMenuOpened" />
 
     <perfect-scrollbar
       v-if="routes.length > 0"
@@ -11,7 +8,7 @@
       :options="{
         suppressScrollX: true,
         maxScrollbarLength: 160,
-        wheelSpeed: 0.60,
+        wheelSpeed: 0.6,
       }"
     >
       <a-menu
@@ -54,10 +51,7 @@
       </a-menu>
     </perfect-scrollbar>
 
-    <SiderFooter
-      class="app-sider-footer"
-      :is-side-menu-opened="isSideMenuOpened"
-    />
+    <SiderFooter class="app-sider-footer" :is-side-menu-opened="isSideMenuOpened" />
   </div>
 </template>
 
@@ -209,7 +203,7 @@ export default {
         border: 2px solid $primary;
         cursor: pointer;
         &::after {
-          content: "";
+          content: '';
           @apply absolute w-2 h-2 rounded-full;
           border: 2px solid $primary;
           top: 50%;

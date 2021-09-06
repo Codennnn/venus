@@ -1,10 +1,5 @@
 <template>
-  <apexchart
-    type="radialBar"
-    height="240"
-    :options="multiRadialOptions"
-    :series="series"
-  />
+  <apexchart type="radialBar" height="240" :options="multiRadialOptions" :series="series" />
 </template>
 
 <script>

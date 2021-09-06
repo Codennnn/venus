@@ -1,48 +1,26 @@
 <template>
   <div>
-    <a-button
-      class="mb-4"
-      size="large"
-      type="primary"
-      @click="addNewBoard"
-    >
+    <a-button class="mb-4" size="large" type="primary" @click="addNewBoard">
       添加一个看板
     </a-button>
 
     <div class="kb">
-      <div
-        v-for="(it, i) in kbList"
-        :key="i"
-        class="kb-col"
-      >
+      <div v-for="(it, i) in kbList" :key="i" class="kb-col">
         <div class="mb-4 flex items-center">
-          <a-input
-            v-model="it.title"
-            class="kb-col__input"
-            @blur="onTitleEdited($event, it.id)"
-          />
+          <a-input v-model="it.title" class="kb-col__input" @blur="onTitleEdited($event, it.id)" />
           <a-dropdown :trigger="['click']">
-            <feather
-              class="cursor-pointer"
-              size="20"
-              type="more-vertical"
-            />
+            <feather class="cursor-pointer" size="20" type="more-vertical" />
             <template #overlay>
               <a-menu>
                 <a-menu-item @click="$message.success('已复制看板链接')">
                   复制看板链接
                 </a-menu-item>
-                <a-menu-item @click="deleteBoard(it.title)">
-                  删除此看板
-                </a-menu-item>
+                <a-menu-item @click="deleteBoard(it.title)"> 删除此看板 </a-menu-item>
               </a-menu>
             </template>
           </a-dropdown>
         </div>
-        <draggable
-          v-model="it.dataList"
-          v-bind="dragOptions"
-        >
+        <draggable v-model="it.dataList" v-bind="dragOptions">
           <transition-group tag="ul">
             <li
               v-for="{ id, label, content, items, members } in it.dataList"
@@ -52,20 +30,9 @@
               @click="showDrawer = true"
             >
               <div v-html="content" />
-              <div
-                v-if="items"
-                class="mt-4 flex items-center text-xs"
-              >
-                <div
-                  v-for="{ item, value } in items"
-                  :key="item"
-                  class="mr-2 flex items-center"
-                >
-                  <feather
-                    class="mr-1"
-                    size="12"
-                    :type="itemIcon[item]"
-                  />
+              <div v-if="items" class="mt-4 flex items-center text-xs">
+                <div v-for="{ item, value } in items" :key="item" class="mr-2 flex items-center">
+                  <feather class="mr-1" size="12" :type="itemIcon[item]" />
                   {{ value }}
                 </div>
 
@@ -83,51 +50,25 @@
             </li>
           </transition-group>
         </draggable>
-        <div
-          v-show="currAdd.title === it.title"
-          class="mb-2"
-        >
+        <div v-show="currAdd.title === it.title" class="mb-2">
           <a-textarea
             v-model.trim="currAdd.content"
             class="mb-1"
             :auto-size="{ minRows: 3, maxRows: 5 }"
           />
-          <a-button
-            class="mr-2"
-            size="small"
-            type="primary"
-            @click="addNewItem"
-          >
-            提交
-          </a-button>
-          <a-button
-            size="small"
-            type="danger"
-            @click="reset"
-          >
-            取消
-          </a-button>
+          <a-button class="mr-2" size="small" type="primary" @click="addNewItem"> 提交 </a-button>
+          <a-button size="small" type="danger" @click="reset"> 取消 </a-button>
         </div>
         <div class="flex items-center">
-          <div
-            class="flex items-center cursor-pointer"
-            @click="currAdd.title = it.title"
-          >
-            <feather
-              size="15"
-              type="plus"
-            />
+          <div class="flex items-center cursor-pointer" @click="currAdd.title = it.title">
+            <feather size="15" type="plus" />
             创建新项
           </div>
         </div>
       </div>
     </div>
 
-    <kanban-drawer
-      :visible="showDrawer"
-      :data-source="currEdit"
-      @close="showDrawer = false"
-    />
+    <kanban-drawer :visible="showDrawer" :data-source="currEdit" @close="showDrawer = false" />
   </div>
 </template>
 
@@ -152,7 +93,7 @@ export default {
             content: '君自故乡来，应知故乡事。来日绮窗前，寒梅著花未？🌺',
             items: [
               { item: 'time', value: '1-6' },
-              { item: 'msg', value: 14 }, 
+              { item: 'msg', value: 14 },
             ],
             members: [
               { id: '1', avatar: '头' },

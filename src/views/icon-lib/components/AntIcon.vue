@@ -1,7 +1,7 @@
 <template>
   <div>
     <a-icon
-      v-for="({ type, theme = 'outlined', twoToneColor }) in icons"
+      v-for="{ type, theme = 'outlined', twoToneColor } in icons"
       :key="type"
       class="mr-6 text-2xl"
       :type="type"
