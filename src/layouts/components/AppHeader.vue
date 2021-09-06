@@ -1,12 +1,10 @@
 <template>
   <div class="app-header">
     <div class="shortcuts">
-      <a-tooltip
-        v-for="({ icon, routeName, title }) in shortcuts"
-        :key="icon"
-        placement="bottom"
-      >
-        <template #title>{{ title }}</template>
+      <a-tooltip v-for="{ icon, routeName, title } in shortcuts" :key="icon" placement="bottom">
+        <template #title>
+          {{ title }}
+        </template>
         <feather
           class="mr-4 cursor-pointer"
           size="20"
@@ -19,10 +17,7 @@
     <div class="setting">
       <div class="flex items-center">
         <header-search ref="headerSearch" />
-        <feather
-          type="search"
-          @click="$refs.headerSearch.onOpenSearch()"
-        />
+        <feather type="search" @click="$refs.headerSearch.onOpenSearch()" />
         <feather
           class="mx-4"
           :type="isFullScreen ? 'minimize' : 'maximize'"
@@ -31,15 +26,16 @@
         <header-notice />
       </div>
 
-      <a-dropdown
-        class="ml-4"
-        :trigger="['click']"
-      >
+      <a-dropdown class="ml-4" :trigger="['click']">
         <div class="h-full flex items-center">
           <div class="flex items-center text-base">
             <div class="mx-4 text-right">
-              <div class="text-lg">{{ info.nickname || '暂无昵称' }}</div>
-              <div class="text-sm">{{ info.role }}</div>
+              <div class="text-lg">
+                {{ info.nickname || '暂无昵称' }}
+              </div>
+              <div class="text-sm">
+                {{ info.role }}
+              </div>
             </div>
             <div>
               <a-avatar
@@ -58,14 +54,8 @@
               :key="index"
               @click="onClickMenuItem(name, click)"
             >
-              <div
-                tag="div"
-                class="flex items-center justify-center text-gray-700"
-              >
-                <feather
-                  size="16"
-                  :type="icon"
-                />
+              <div tag="div" class="flex items-center justify-center text-gray-700">
+                <feather size="16" :type="icon" />
                 <span class="ml-2">{{ label }}</span>
               </div>
             </a-menu-item>
@@ -94,16 +84,25 @@ export default {
     ],
     menuItems: [
       {
-        label: '官方文档', name: 'https://docs.leoku.top', icon: 'book-open',
+        label: '官方文档',
+        name: 'https://docs.leoku.top',
+        icon: 'book-open',
       },
       {
-        label: '个人中心', name: 'Profile', icon: 'user',
+        label: '个人中心',
+        name: 'Profile',
+        icon: 'user',
       },
       {
-        label: '待办事项', name: 'Todo', icon: 'check-square',
+        label: '待办事项',
+        name: 'Todo',
+        icon: 'check-square',
       },
       {
-        label: '退出登录', name: 'Login', icon: 'log-out', click: 'logOut',
+        label: '退出登录',
+        name: 'Login',
+        icon: 'log-out',
+        click: 'logOut',
       },
     ],
     isFullScreen: false,
@@ -117,7 +116,9 @@ export default {
 
   mounted() {
     if (screenfull.isEnabled) {
-      screenfull.on('change', () => { this.isFullScreen = screenfull.isFullscreen })
+      screenfull.on('change', () => {
+        this.isFullScreen = screenfull.isFullscreen
+      })
     }
   },
 

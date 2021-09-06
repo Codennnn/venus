@@ -7,22 +7,18 @@
         type="primary"
         @click="onOpenDrawer"
       >
-        <feather
-          class="mr-1"
-          size="20"
-          type="plus"
-        />
+        <feather class="mr-1" size="20" type="plus" />
         创建任务
       </a-button>
     </div>
 
     <perfect-scrollbar
-      style="height: calc(100% - 88px);"
+      style="height: calc(100% - 88px)"
       class="select-none overflow-hidden"
       :options="{
         suppressScrollX: true,
         maxScrollbarLength: 160,
-        wheelSpeed: 0.60,
+        wheelSpeed: 0.6,
       }"
     >
       <a-menu
@@ -31,41 +27,18 @@
         :selected-keys="selectedKeys"
         @click="onClickMenuItem"
       >
-        <a-menu-item
-          disabled
-          class="m-0 bg-white cursor-default"
-        >
-          查看任务
-        </a-menu-item>
-        <a-menu-item
-          v-for="({ id, label, icon }) in filters"
-          :key="id"
-        >
+        <a-menu-item disabled class="m-0 bg-white cursor-default"> 查看任务 </a-menu-item>
+        <a-menu-item v-for="{ id, label, icon } in filters" :key="id">
           <div class="flex items-center">
-            <feather
-              size="20"
-              class="side-menu-icon anticon"
-              :type="icon"
-            ></feather>
-            <span style="margin-top: 1px;">{{ label }}</span>
+            <feather size="20" class="side-menu-icon anticon" :type="icon" />
+            <span style="margin-top: 1px">{{ label }}</span>
           </div>
         </a-menu-item>
-        <a-menu-item
-          disabled
-          class="mt-6 mb-0 bg-white cursor-default"
-        >
-          任务标签
-        </a-menu-item>
-        <a-menu-item
-          v-for="({ id, label, color }) in tags"
-          :key="id"
-        >
+        <a-menu-item disabled class="mt-6 mb-0 bg-white cursor-default"> 任务标签 </a-menu-item>
+        <a-menu-item v-for="{ id, label, color } in tags" :key="id">
           <div class="flex justify-between items-center">
-            <span style="margin-top: 1px;">{{ label }}</span>
-            <div
-              class="w-2 h-2 mr-2 rounded-full"
-              :class="`bg-${color}`"
-            ></div>
+            <span style="margin-top: 1px">{{ label }}</span>
+            <div class="w-2 h-2 mr-2 rounded-full" :class="`bg-${color}`" />
           </div>
         </a-menu-item>
       </a-menu>

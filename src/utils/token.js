@@ -1,6 +1,10 @@
 import Vue from 'vue'
 
-export function setToken(value = (() => { throw new Error('请输入参数！') })()) {
+export function setToken(
+  value = (() => {
+    throw new Error('请输入参数！')
+  })()
+) {
   if (typeof value !== 'string') {
     throw new Error('参数应为 string')
   }

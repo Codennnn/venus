@@ -1,10 +1,5 @@
 <template>
-  <apexchart
-    type="bar"
-    height="110"
-    :options="barNegativeChartoptions"
-    :series="series"
-  ></apexchart>
+  <apexchart type="bar" height="110" :options="barNegativeChartoptions" :series="series" />
 </template>
 
 <script>
@@ -14,13 +9,16 @@ export default {
   props: {
     series: {
       type: Array,
-      default: () => [{
-        name: '新用户',
-        data: [75, 150, 225, 200, 35, 50, 150, 180, 50, 150, 240, 140, 75, 35, 60, 120],
-      }, {
-        name: '留存用户',
-        data: [-100, -55, -40, -120, -70, -40, -60, -50, -70, -30, -60, -40, -50, -70, -40, -50],
-      }],
+      default: () => [
+        {
+          name: '新用户',
+          data: [75, 150, 225, 200, 35, 50, 150, 180, 50, 150, 240, 140, 75, 35, 60, 120],
+        },
+        {
+          name: '留存用户',
+          data: [-100, -55, -40, -120, -70, -40, -60, -50, -70, -30, -60, -40, -50, -70, -40, -50],
+        },
+      ],
     },
   },
 

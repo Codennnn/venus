@@ -24,23 +24,13 @@
           @click="!routeItem.meta.disabled && props.routeTo(routeItem.path)"
         >
           <div class="flex items-center">
-            <feather
-              class="mr-4"
-              size="10"
-              stroke-width="3"
-              type="minus"
-            />
+            <feather class="mr-4" size="10" stroke-width="3" type="minus" />
             <span>{{ routeItem.meta.title }}</span>
           </div>
         </a-menu-item>
       </template>
 
-      <sub-menu
-        v-else
-        :key="routeItem.name"
-        :menu-info="routeItem"
-        :route-to="props.routeTo"
-      />
+      <sub-menu v-else :key="routeItem.name" :menu-info="routeItem" :route-to="props.routeTo" />
     </template>
   </a-sub-menu>
 </template>

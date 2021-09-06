@@ -6,10 +6,7 @@
       :wrapper-col="formItemLayout.wrapperCol"
     >
       <a-input
-        v-decorator="[
-          'username',
-          { rules: [{ required: true, message: '请输入您的姓名' }] },
-        ]"
+        v-decorator="['username', { rules: [{ required: true, message: '请输入您的姓名' }] }]"
         placeholder="请输入您的姓名"
       />
     </a-form-item>
@@ -26,27 +23,11 @@
         placeholder="请输入您的社交昵称"
       />
     </a-form-item>
-    <a-form-item
-      :label-col="formTailLayout.labelCol"
-      :wrapper-col="formTailLayout.wrapperCol"
-    >
-      <a-checkbox
-        :checked="checkNick"
-        @change="handleCheckChange"
-      >
-        将昵称设为必填
-      </a-checkbox>
+    <a-form-item :label-col="formTailLayout.labelCol" :wrapper-col="formTailLayout.wrapperCol">
+      <a-checkbox :checked="checkNick" @change="handleCheckChange"> 将昵称设为必填 </a-checkbox>
     </a-form-item>
-    <a-form-item
-      :label-col="formTailLayout.labelCol"
-      :wrapper-col="formTailLayout.wrapperCol"
-    >
-      <a-button
-        type="primary"
-        @click="handleCheck"
-      >
-        点击校验
-      </a-button>
+    <a-form-item :label-col="formTailLayout.labelCol" :wrapper-col="formTailLayout.wrapperCol">
+      <a-button type="primary" @click="handleCheck"> 点击校验 </a-button>
     </a-form-item>
   </a-form>
 </template>

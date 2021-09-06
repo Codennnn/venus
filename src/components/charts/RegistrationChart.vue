@@ -1,10 +1,5 @@
 <template>
-  <apexchart
-    type="bar"
-    height="60"
-    :options="registrationChartoptions"
-    :series="series"
-  ></apexchart>
+  <apexchart type="bar" height="60" :options="registrationChartoptions" :series="series" />
 </template>
 
 <script>
@@ -14,10 +9,12 @@ export default {
   props: {
     series: {
       type: Array,
-      default: () => [{
-        name: '人数',
-        data: [300, 700, 500, 1500, 900, 800, 1200],
-      }],
+      default: () => [
+        {
+          name: '人数',
+          data: [300, 700, 500, 1500, 900, 800, 1200],
+        },
+      ],
     },
   },
 

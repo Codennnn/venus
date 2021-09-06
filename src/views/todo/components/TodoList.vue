@@ -9,10 +9,7 @@
         @blur="searchInputText = '搜索任务...'"
       >
         <template #prefix>
-          <feather
-            size="20"
-            type="search"
-          />
+          <feather size="20" type="search" />
         </template>
       </a-input>
     </div>
@@ -21,34 +18,31 @@
       class="todo-list"
       :options="{
         maxScrollbarLength: 160,
-        wheelSpeed: 0.60,
+        wheelSpeed: 0.6,
       }"
     >
-      <flip-list
-        v-if="filterItems.length > 0"
-        style="min-width: 800px;"
-      >
+      <flip-list v-if="filterItems.length > 0" style="min-width: 800px">
         <li
-          class="todo-list__item"
-          v-for="(todo) in filterItems"
+          v-for="todo in filterItems"
           :key="todo.id"
+          class="todo-list__item"
           :class="{ 'todo-list__item-active': todo.id === currEditItem.id }"
           @click="onOpenDrawer(todo)"
         >
-          <a-checkbox
-            class="mr-4"
-            v-model="todo.done"
-            @click.stop
-          />
-          <div class="flex-1 truncate">{{ todo.title }}</div>
+          <a-checkbox v-model="todo.done" class="mr-4" @click.stop />
+          <div class="flex-1 truncate">
+            {{ todo.title }}
+          </div>
           <div class="ml-auto flex items-center flex-wrap">
             <div class="flex-1 flex items-center select-none">
               <div
-                class="ml-2 px-2 py-1 rounded-lg text-sm"
-                v-for="(it) in todo.tag"
+                v-for="it in todo.tag"
                 :key="it"
+                class="ml-2 px-2 py-1 rounded-lg text-sm"
                 :class="[tags[it].color, `bg-${tags[it].color}-light`]"
-              >{{ tags[it].text }}</div>
+              >
+                {{ tags[it].text }}
+              </div>
             </div>
             <feather
               class="ml-2 transition"
@@ -60,10 +54,7 @@
           </div>
         </li>
       </flip-list>
-      <a-empty
-        v-else
-        class="h-full flex flex-col justify-center items-center"
-      />
+      <a-empty v-else class="h-full flex flex-col justify-center items-center" />
     </perfect-scrollbar>
   </div>
 </template>
@@ -129,9 +120,11 @@ export default {
 
 .todo-list {
   @apply h-full overflow-hidden;
+
   height: calc(100% - 58px);
   &__item {
     @apply px-6 py-5 flex items-center cursor-pointer;
+
     transition: $transition;
     &:hover {
       box-shadow: 0 15px 30px -5px rgba($secondary, 0.1);

@@ -1,12 +1,12 @@
 <template>
   <div class="todo-app">
     <div class="left">
-      <todo-bar class="h-full"></todo-bar>
+      <todo-bar class="h-full" />
     </div>
     <div class="right">
-      <todo-list class="h-full"></todo-list>
+      <todo-list class="h-full" />
     </div>
-    <todo-drawer></todo-drawer>
+    <todo-drawer />
   </div>
 </template>
 
@@ -25,6 +25,7 @@ export default {
 <style lang="scss" scoped>
 .todo-app {
   @apply relative w-full flex bg-white rounded-lg overflow-hidden;
+
   height: $full-height;
   min-height: 500px;
 
@@ -37,6 +38,7 @@ export default {
 
   .right {
     @apply h-full;
+
     width: 78%;
   }
 }

@@ -1,10 +1,5 @@
 <template>
-  <apexchart
-    type="bar"
-    height="100"
-    :options="salesChartOptions"
-    :series="series"
-  ></apexchart>
+  <apexchart type="bar" height="100" :options="salesChartOptions" :series="series" />
 </template>
 
 <script>
@@ -14,13 +9,16 @@ export default {
   props: {
     series: {
       type: Array,
-      default: () => [{
-        name: '2020',
-        data: [80, 40, 30, 90, 20, 50, 90],
-      }, {
-        name: '2019',
-        data: [20, 60, 70, 10, 80, 50, 10],
-      }],
+      default: () => [
+        {
+          name: '2020',
+          data: [80, 40, 30, 90, 20, 50, 90],
+        },
+        {
+          name: '2019',
+          data: [20, 60, 70, 10, 80, 50, 10],
+        },
+      ],
     },
   },
 

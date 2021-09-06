@@ -52,41 +52,36 @@ module.exports = {
             'border-radius-base': '6px',
             'btn-border-radius-base': '4px',
             'btn-border-radius-sm': '4px',
-            'font-family': '-apple-system, Rubik, \'PingFang SC\', \'Microsoft YaHei\', \'Helvetica Neue\', Helvetica, Arial, sans-serif, \'Apple Color Emoji\', \'Segoe UI Emoji\', \'Segoe UI Symbol\'',
+            'font-family':
+              "-apple-system, Rubik, 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
           },
           javascriptEnabled: true,
         },
       },
       scss: { additionalData: '@import "@/assets/scss/variables.scss";' },
       postcss: {
-        plugins: [
-          require('tailwindcss')('./tailwind.config.js'),
-        ],
+        plugins: [require('tailwindcss')('./tailwind.config.js')],
       },
     },
   },
 
   chainWebpack: (config) => {
-    config.resolve.alias
-      .set('@img', '@/assets/images')
-      .set('@comp', '@/components')
+    config.resolve.alias.set('@img', '@/assets/images').set('@comp', '@/components')
 
-    config
-      .plugin('html')
-      .tap((args) => {
-        args[0].title = process.env.VUE_APP_PAGE_TITLE
-        if (IS_PROD) {
-          args[0].cdn = assetsCDN
-        }
-        return args
-      })
+    config.plugin('html').tap((args) => {
+      args[0].title = process.env.VUE_APP_PAGE_TITLE
+      if (IS_PROD) {
+        args[0].cdn = assetsCDN
+      }
+      return args
+    })
   },
 
   configureWebpack: (config) => {
     config.plugins.push(
       new AntdDayjsWebpackPlugin({
         preset: 'antdv3',
-      }),
+      })
     )
     config.optimization = {
       splitChunks: {
@@ -99,7 +94,7 @@ module.exports = {
         new CompressionPlugin({
           test: /\.js$|\.html$|\.css/,
           threshold: 8192,
-        }),
+        })
       )
       if (process.env.VUE_APP_MODE === 'analyze') {
         config.plugins.push(new BundleAnalyzerPlugin())

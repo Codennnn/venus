@@ -1,22 +1,13 @@
 <template>
   <main class="main-layout">
     <!-- 侧边栏 -->
-    <aside
-      class="the-aside"
-      :class="menuStatusClass"
-    >
+    <aside class="the-aside" :class="menuStatusClass">
       <app-sider />
     </aside>
 
-    <section
-      class="the-section"
-      :class="menuStatusClass"
-    >
+    <section class="the-section" :class="menuStatusClass">
       <!-- 顶部导航 -->
-      <header
-        class="the-header"
-        :class="[menuStatusClass, { 'fixed-top': isHeaderFixed }]"
-      >
+      <header class="the-header" :class="[menuStatusClass, { 'fixed-top': isHeaderFixed }]">
         <app-header />
       </header>
 
@@ -24,14 +15,8 @@
       <main class="the-main">
         <Breadcrumb class="mb-4" />
 
-        <transition
-          name="sale-fade"
-          mode="out-in"
-        >
-          <keep-alive
-            :include="alivePages"
-            :max="5"
-          >
+        <transition name="sale-fade" mode="out-in">
+          <keep-alive :include="alivePages" :max="5">
             <router-view />
           </keep-alive>
         </transition>
@@ -87,7 +72,8 @@ export default {
 
     // 观察滚动距离，调整顶部导航栏背景色
     window.onscroll = _debounce(() => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
       if (scrollTop > 10) {
         this.$store.commit('SET_HEADER_STATUS', true)
       } else {
@@ -101,14 +87,16 @@ export default {
 <style lang="scss" scoped>
 .main-layout {
   @apply relative min-h-screen;
+
   min-width: $layout-min-width;
 }
 
-$main-open-margin-left: pxTorem($sider-opened-width) + $section-gap;
-$main-close-margin-left: pxTorem($sider-closed-width) + $section-gap;
+$main-open-margin-left: px2rem($sider-opened-width) + $section-gap;
+$main-close-margin-left: px2rem($sider-closed-width) + $section-gap;
 
 .the-aside {
   @apply fixed top-0 left-0 h-full;
+
   z-index: 999;
   width: $sider-opened-width;
   border-right: 1px solid #dfe3e7;
@@ -120,8 +108,9 @@ $main-close-margin-left: pxTorem($sider-closed-width) + $section-gap;
 
 .the-section {
   @apply relative h-full flex flex-col;
+
   margin-left: $main-open-margin-left;
-  padding-top: pxTorem($header-height) + $section-gap;
+  padding-top: px2rem($header-height) + $section-gap;
   padding-right: $section-gap;
   transition: $transition;
   &.menu-close {
@@ -131,6 +120,7 @@ $main-close-margin-left: pxTorem($sider-closed-width) + $section-gap;
 
 .the-header {
   @apply fixed top-0 right-0 flex items-center;
+
   z-index: 999;
   width: calc(100% - #{$sider-opened-width});
   height: $header-height;
@@ -147,13 +137,13 @@ $main-close-margin-left: pxTorem($sider-closed-width) + $section-gap;
 
 .the-main {
   @apply h-full min-w-full;
-  min-height: calc(
-    100vh - #{$header-height} - #{$footer-height} - 2 * #{$section-gap}
-  );
+
+  min-height: calc(100vh - #{$header-height} - #{$footer-height} - 2 * #{$section-gap});
 }
 
 .the-footer {
   @apply mt-auto w-full;
+
   padding-top: $section-gap;
 }
 </style>

@@ -1,23 +1,8 @@
 <template>
-  <transition
-    name="sale-down"
-    mode="out-in"
-  >
-    <div
-      v-show="show"
-      class="search-wrapper"
-      :class="{ 'full': isSideMenuOpened }"
-    >
-      <feather
-        class="icon-search"
-        type="search"
-        size="20"
-      />
-      <feather
-        class="icon-close"
-        type="x"
-        size="20"
-      />
+  <transition name="sale-down" mode="out-in">
+    <div v-show="show" class="search-wrapper" :class="{ full: isSideMenuOpened }">
+      <feather class="icon-search" type="search" size="20" />
+      <feather class="icon-close" type="x" size="20" />
       <a-input
         ref="searchInput"
         v-model="searchContent"

@@ -1,9 +1,9 @@
 <template>
   <div>
     <feather
-      class="mr-6"
-      v-for="({ type, stroke, fill, strokeWidth, size = 22 }) in icons"
+      v-for="{ type, stroke, fill, strokeWidth, size = 22 } in icons"
       :key="type"
+      class="mr-6"
       :type="type"
       :size="size"
       :stroke="stroke"
@@ -26,7 +26,10 @@ export default {
       { type: 'at-sign', size: 30 },
       { type: 'twitter', size: 35, strokeWidth: 1.6 },
       {
-        type: 'thumbs-up', size: 40, stroke: '#fdac41', fill: 'rgba(253, 172, 65, .15)',
+        type: 'thumbs-up',
+        size: 40,
+        stroke: '#fdac41',
+        fill: 'rgba(253, 172, 65, .15)',
       },
     ],
   }),

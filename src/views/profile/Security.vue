@@ -1,25 +1,19 @@
 <template>
   <div class="flex justify-center">
     <div class="w-1/3">
-      <a-form
-        hide-required-mark
-        class="login-form"
-        :form="form"
-        @submit="handleForm"
-      >
+      <a-form hide-required-mark class="login-form" :form="form" @submit="handleForm">
         <a-form-item
-          v-for="({ label, decorator, size='large', placeholder, type='password' }) in formItems"
+          v-for="{ label, decorator, size = 'large', placeholder, type = 'password' } in formItems"
           :key="decorator[0]"
           :label="label"
         >
           <a-input
+            v-decorator="decorator"
             class="login-input"
             :size="size"
             :type="type"
             :placeholder="placeholder"
-            v-decorator="decorator"
-          >
-          </a-input>
+          />
         </a-form-item>
         <a-form-item>
           <a-button
@@ -40,7 +34,7 @@
 <script>
 import { removeToken } from '@/utils/token'
 
-import { resetPassword } from '@/api/user'
+import { resetPassword } from '@/services/user'
 
 export default {
   name: 'Profile',
@@ -52,10 +46,7 @@ export default {
         {
           label: '旧密码',
           placeholder: '旧密码',
-          decorator: [
-            'oldPwd',
-            { rules: [{ required: true, message: '请输入账号' }] },
-          ],
+          decorator: ['oldPwd', { rules: [{ required: true, message: '请输入账号' }] }],
         },
         {
           label: '再次旧密码',
@@ -63,29 +54,28 @@ export default {
           decorator: [
             'oldPwd2',
             {
-              rules: [{
-                validator: (_, val = '', callback) => {
-                  const oldPwd = this.form.getFieldValue('oldPwd')?.trim()
-                  const oldPwd2 = val.trim()
-                  if (oldPwd2.length <= 0) {
-                    callback(new Error('请再次确认密码'))
-                  }
-                  if (oldPwd !== oldPwd2) {
-                    callback(new Error('两次密码不一致'))
-                  }
-                  callback()
+              rules: [
+                {
+                  validator: (_, val = '', callback) => {
+                    const oldPwd = this.form.getFieldValue('oldPwd')?.trim()
+                    const oldPwd2 = val.trim()
+                    if (oldPwd2.length <= 0) {
+                      callback(new Error('请再次确认密码'))
+                    }
+                    if (oldPwd !== oldPwd2) {
+                      callback(new Error('两次密码不一致'))
+                    }
+                    callback()
+                  },
                 },
-              }],
+              ],
             },
           ],
         },
         {
           label: '新密码',
           placeholder: '新密码',
-          decorator: [
-            'newPwd',
-            { rules: [{ required: true, message: '请输入新密码' }] },
-          ],
+          decorator: ['newPwd', { rules: [{ required: true, message: '请输入新密码' }] }],
         },
       ],
       loading: false,
@@ -103,7 +93,8 @@ export default {
             const { oldPwd: oldPassword, newPwd: newPassword } = values
             if (oldPassword && newPassword) {
               await resetPassword({
-                oldPassword, newPassword,
+                oldPassword,
+                newPassword,
               })
               removeToken()
               this.$router.replace('/login')

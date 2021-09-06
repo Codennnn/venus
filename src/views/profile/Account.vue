@@ -1,42 +1,34 @@
 <template>
   <div>
     <div class="flex items-center">
-      <a-avatar
-        :size="80"
-        :src="info.avatar"
-      />
+      <a-avatar :size="80" :src="info.avatar" />
       <div class="ml-4">
-        <div class="mb-2 text-xl">{{ info.nickname }}</div>
+        <div class="mb-2 text-xl">
+          {{ info.nickname }}
+        </div>
         <div>
-          <a-button
-            class="text-xs"
-            type="primary"
-            @click="avatarUploadVisible = true"
-          >更改头像</a-button>
-          <a-button class="ml-1 text-xs">重置</a-button>
+          <a-button class="text-xs" type="primary" @click="avatarUploadVisible = true">
+            更改头像
+          </a-button>
+          <a-button class="ml-1 text-xs"> 重置 </a-button>
         </div>
       </div>
     </div>
 
     <div class="my-8">
-      <a-form
-        hide-required-mark
-        class="account-form"
-        :form="form"
-      >
+      <a-form hide-required-mark class="account-form" :form="form">
         <a-form-item
-          class="account-form__item"
-          v-for="({ label, decorator, size='large', placeholder }) in formItems"
+          v-for="{ label, decorator, size = 'large', placeholder } in formItems"
           :key="decorator[0]"
+          class="account-form__item"
           :label="label"
         >
           <a-input
+            v-decorator="decorator"
             class="login-input"
             :size="size"
             :placeholder="placeholder"
-            v-decorator="decorator"
-          >
-          </a-input>
+          />
         </a-form-item>
       </a-form>
     </div>
@@ -103,18 +95,14 @@
     </div>
 
     <div class="mt-6 flex justify-end">
-      <a-button
-        class="mr-4"
-        size="large"
-        type="primary"
-      >保存更改</a-button>
-      <a-button size="large">取消</a-button>
+      <a-button class="mr-4" size="large" type="primary"> 保存更改 </a-button>
+      <a-button size="large"> 取消 </a-button>
     </div>
 
     <a-modal
+      v-model="avatarUploadVisible"
       centered
       title="更改头像"
-      v-model="avatarUploadVisible"
       :mask-closable="false"
       :footer="null"
     >

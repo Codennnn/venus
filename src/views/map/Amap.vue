@@ -3,9 +3,13 @@
     <div class="section-card mb-6">
       <h3 class="section-card__title">初始化地图</h3>
       <p class="mt-6 mb-2">1. 安装 JSAPI Loader 依赖</p>
-      <pre v-highlightjs><code class="shell">{{ `npm i @amap/amap-jsapi-loader --save` }}</code></pre>
+      <pre
+        v-highlightjs
+      ><code class="shell">{{ `npm i @amap/amap-jsapi-loader --save` }}</code></pre>
       <p class="mt-6 mb-2">2. 在 mounted 生命周期函数中或之后进行初始化</p>
-      <pre v-highlightjs><code class="javascript">{{ `import AMapLoader from '@amap/amap-jsapi-loader'
+      <pre
+        v-highlightjs
+      ><code class="javascript">{{ `import AMapLoader from '@amap/amap-jsapi-loader'
 
 AMapLoader.load({
     "key": "您申请的key值", // 申请好的Web端开发者Key，首次调用 load 时必填
@@ -20,7 +24,9 @@ AMapLoader.load({
 
     <div class="section-card">
       <h3 class="section-card__title">自定义地图样式</h3>
-      <p>您可以使用官方提供的地图样式，对底图进行设置，可选的样式有：normal/marcaron/graffiti/whitesmoke/dark/fresh/darkblue/blue/light/grey</p>
+      <p>
+        您可以使用官方提供的地图样式，对底图进行设置，可选的样式有：normal/marcaron/graffiti/whitesmoke/dark/fresh/darkblue/blue/light/grey
+      </p>
       <pre v-highlightjs>
         <code class="javascript">{{ `const map = new AMap.Map('container', {
     mapStyle: 'amap://styles/whitesmoke', // 设置地图的显示样式
@@ -28,15 +34,19 @@ AMapLoader.load({
       </pre>
       <div class="-m-2 flex flex-wrap">
         <div
-          class="w-1/2 p-4 text-center"
-          v-for="(name, i) in ['标准（normal）', '远山黛（whitesmoke）', '幻影黑（dark）', '雅士灰（grey）']"
+          v-for="(name, i) in [
+            '标准（normal）',
+            '远山黛（whitesmoke）',
+            '幻影黑（dark）',
+            '雅士灰（grey）',
+          ]"
           :key="i"
+          class="w-1/2 p-4 text-center"
         >
-          <div
-            class="map-demo-style"
-            :id="`map-demo-${i}`"
-          ></div>
-          <p class="mt-2 text-xl">{{ name }}</p>
+          <div :id="`map-demo-${i}`" class="map-demo-style" />
+          <p class="mt-2 text-xl">
+            {{ name }}
+          </p>
         </div>
       </div>
     </div>
@@ -58,28 +68,6 @@ export default {
     this.mapLoad()
   },
 
-  methods: {
-    async mapLoad() {
-      try {
-        const AMap = await AMapLoader.load({
-          key: this.key,
-          version: '2.0',
-        })
-        this.mapDemos = ['normal', 'whitesmoke', 'dark', 'grey'].map((styleName, i) => new AMap.Map(`map-demo-${i}`, {
-          zoom: 17,
-          center: [113.495497, 23.451012],
-          mapStyle: `amap://styles/${styleName}`,
-        }))
-      } catch (e) {
-        this.$notify.error({
-          duration: null,
-          message: '地图加载出错，请尝试刷新页面',
-          description: e,
-        })
-      }
-    },
-  },
-
   beforeDestroy() {
     this.mapDemos?.forEach((map) => {
       if (map) {
@@ -88,6 +76,31 @@ export default {
     })
     window.AMap = null
     this.mapDemos = null
+  },
+
+  methods: {
+    async mapLoad() {
+      try {
+        const AMap = await AMapLoader.load({
+          key: this.key,
+          version: '2.0',
+        })
+        this.mapDemos = ['normal', 'whitesmoke', 'dark', 'grey'].map(
+          (styleName, i) =>
+            new AMap.Map(`map-demo-${i}`, {
+              zoom: 17,
+              center: [113.495497, 23.451012],
+              mapStyle: `amap://styles/${styleName}`,
+            })
+        )
+      } catch (e) {
+        this.$notify.error({
+          duration: null,
+          message: '地图加载出错，请尝试刷新页面',
+          description: e,
+        })
+      }
+    },
   },
 }
 </script>
@@ -102,6 +115,7 @@ export default {
 
 .map-demo-style {
   @apply w-full;
+
   height: 300px;
 }
 </style>

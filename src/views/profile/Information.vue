@@ -1,23 +1,18 @@
 <template>
   <div>
-    <a-form
-      hide-required-mark
-      class="account-form"
-      :form="form"
-    >
+    <a-form hide-required-mark class="account-form" :form="form">
       <a-form-item
-        class="account-form__item"
-        v-for="({ label, decorator, size='large', placeholder }) in formItems"
+        v-for="{ label, decorator, size = 'large', placeholder } in formItems"
         :key="decorator[0]"
+        class="account-form__item"
         :label="label"
       >
         <a-input
+          v-decorator="decorator"
           class="login-input"
           :size="size"
           :placeholder="placeholder"
-          v-decorator="decorator"
-        >
-        </a-input>
+        />
       </a-form-item>
     </a-form>
   </div>
@@ -56,6 +51,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-</style>

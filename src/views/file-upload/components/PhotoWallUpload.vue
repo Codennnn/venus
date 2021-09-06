@@ -12,7 +12,7 @@
     >
       <div v-if="fileList.length < 6">
         <a-icon type="plus" />
-        <div class="mt-2"> 上传 </div>
+        <div class="mt-2">上传</div>
       </div>
     </a-upload>
 
@@ -24,10 +24,7 @@
       :footer="null"
       @cancel="handleCancel"
     >
-      <img
-        alt="image"
-        :src="previewImage"
-      />
+      <img alt="image" :src="previewImage" />
     </a-modal>
   </div>
 </template>

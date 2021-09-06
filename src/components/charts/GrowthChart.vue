@@ -1,10 +1,5 @@
 <template>
-  <apexchart
-    type="radialBar"
-    height="200"
-    :options="growthChartOptions"
-    :series="series"
-  ></apexchart>
+  <apexchart type="radialBar" height="200" :options="growthChartOptions" :series="series" />
 </template>
 
 <script>

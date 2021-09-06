@@ -1,39 +1,21 @@
 <template>
-  <a-drawer
-    width="400"
-    :closable="false"
-    :mask="false"
-    :visible="visible"
-  >
+  <a-drawer width="400" :closable="false" :mask="false" :visible="visible">
     <template #title>
       <div class="flex items-center">
         <h3>{{ editData.title }}</h3>
-        <feather
-          class="ml-auto cursor-pointer"
-          size="21"
-          type="x"
-          @click="onCloseDrawer"
-        />
+        <feather class="ml-auto cursor-pointer" size="21" type="x" @click="onCloseDrawer" />
       </div>
     </template>
     <!-- 卡片标题 -->
     <div>
       <h4 class="mb-2 text-gray-500">卡片标题</h4>
-      <a-input
-        size="large"
-        placeholder="请输入标题信息"
-        v-model="editData.title"
-      />
+      <a-input v-model="editData.title" size="large" placeholder="请输入标题信息" />
     </div>
 
     <!-- 日期选择 -->
     <div>
       <h4 class="mt-6 mb-2 text-gray-500">完成时间</h4>
-      <a-date-picker
-        class="w-full"
-        size="large"
-        v-model="editData.time"
-      />
+      <a-date-picker v-model="editData.time" class="w-full" size="large" />
     </div>
 
     <!-- 颜色标签 -->
@@ -44,19 +26,23 @@
           <div
             class="w-10 h-10 mr-2 rounded-full cursor-pointer shadow-md"
             :class="`bg-${editData.label}`"
-          ></div>
+          />
           <template #overlay>
             <a-menu>
               <a-menu-item
-                class="flex items-center"
-                v-for="(color, i) in ['primary', 'success', 'warning', 'danger', 'info', 'secondary']"
+                v-for="(color, i) in [
+                  'primary',
+                  'success',
+                  'warning',
+                  'danger',
+                  'info',
+                  'secondary',
+                ]"
                 :key="i"
+                class="flex items-center"
                 @click="editData.label = color"
               >
-                <div
-                  class="w-5 h-5 mr-2 rounded-full"
-                  :class="`bg-${color}`"
-                ></div>
+                <div class="w-5 h-5 mr-2 rounded-full" :class="`bg-${color}`" />
                 {{ color.toUpperCase() }}
               </a-menu-item>
             </a-menu>
@@ -72,15 +58,8 @@
             size="large"
             :src="$store.state.user.info.avatar"
           />
-          <a-avatar
-            class="bg-secondary-light cursor-pointer"
-            size="large"
-          >
-            <feather
-              style="margin-top: 7px;"
-              class="secondary"
-              type="plus"
-            />
+          <a-avatar class="bg-secondary-light cursor-pointer" size="large">
+            <feather style="margin-top: 7px" class="secondary" type="plus" />
           </a-avatar>
         </div>
       </div>
@@ -89,23 +68,12 @@
     <!-- 附件上传 -->
     <div>
       <h4 class="mt-6 mb-2 text-gray-500">添加附件</h4>
-      <a-input
-        size="large"
-        placeholder="请输入附件链接"
-        v-model="editData.fileName"
-      >
+      <a-input v-model="editData.fileName" size="large" placeholder="请输入附件链接">
         <template #addonAfter>
-          <div
-            class="cursor-pointer"
-            @click="uploadAttachment"
-          >或点击上传附件</div>
+          <div class="cursor-pointer" @click="uploadAttachment">或点击上传附件</div>
         </template>
       </a-input>
-      <input
-        id="attachment"
-        type="file"
-        hidden
-      />
+      <input id="attachment" type="file" hidden />
     </div>
 
     <div class="relative">
@@ -117,10 +85,10 @@
       />
       <div class="absolute bottom-0 right-0 m-2 flex items-center">
         <feather
+          v-for="icon in ['bold', 'italic', 'link', 'youtube', 'image']"
+          :key="icon"
           class="mr-3 cursor-pointer"
           size="18"
-          v-for="(icon) in ['bold', 'italic', 'link', 'youtube', 'image']"
-          :key="icon"
           :type="icon"
         />
       </div>
@@ -133,30 +101,13 @@
         cancel-text="点错了"
         @confirm="deleteBoard"
       >
-        <a-button
-          class="mr-5 flex items-center"
-          size="large"
-          type="danger"
-        >
-          <feather
-            class="mr-2"
-            size="20"
-            type="trash"
-          />
+        <a-button class="mr-5 flex items-center" size="large" type="danger">
+          <feather class="mr-2" size="20" type="trash" />
           删 除
         </a-button>
       </a-popconfirm>
-      <a-button
-        class="flex items-center"
-        size="large"
-        type="primary"
-        @click="onCloseDrawer"
-      >
-        <feather
-          class="mr-2"
-          size="20"
-          type="save"
-        />
+      <a-button class="flex items-center" size="large" type="primary" @click="onCloseDrawer">
+        <feather class="mr-2" size="20" type="save" />
         保 存
       </a-button>
     </div>
