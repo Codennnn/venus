@@ -46,7 +46,7 @@
               size="20"
               class="side-menu-icon anticon"
               :type="icon"
-            ></feather>
+            />
             <span style="margin-top: 1px;">{{ label }}</span>
           </div>
         </a-menu-item>
@@ -65,7 +65,7 @@
             <div
               class="w-2 h-2 mr-2 rounded-full"
               :class="`bg-${color}`"
-            ></div>
+            />
           </div>
         </a-menu-item>
       </a-menu>

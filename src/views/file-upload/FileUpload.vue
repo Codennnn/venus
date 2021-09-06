@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="section-card mb-6">
-      <h3 class="section-card__title">文件上传</h3>
+      <h3 class="section-card__title">
+        文件上传
+      </h3>
       <div class="flex">
         <files-upload class="w-1/3 pr-3" />
         <image-upload class="w-1/3 px-3" />
@@ -10,7 +12,9 @@
     </div>
 
     <div class="section-card mb-6">
-      <h3 class="section-card__title">头像上传</h3>
+      <h3 class="section-card__title">
+        头像上传
+      </h3>
       <avatar-upload preview />
     </div>
   </div>

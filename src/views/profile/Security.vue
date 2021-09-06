@@ -13,13 +13,12 @@
           :label="label"
         >
           <a-input
+            v-decorator="decorator"
             class="login-input"
             :size="size"
             :type="type"
             :placeholder="placeholder"
-            v-decorator="decorator"
-          >
-          </a-input>
+          />
         </a-form-item>
         <a-form-item>
           <a-button

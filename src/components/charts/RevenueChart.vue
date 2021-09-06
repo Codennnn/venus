@@ -4,7 +4,7 @@
     height="100"
     :options="revenueChartOptions"
     :series="series"
-  ></apexchart>
+  />
 </template>
 
 <script>

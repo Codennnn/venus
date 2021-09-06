@@ -4,10 +4,10 @@
       <div class="flex">
         <div
           v-for="({ name, text, icon }) in [
-          { text: '账号设置', name: 'Account', icon: 'settings' },
-          { text: '个人信息', name: 'Information', icon: 'user' },
-          { text: '安全设置', name: 'Security', icon: 'terminal' },
-        ]"
+            { text: '账号设置', name: 'Account', icon: 'settings' },
+            { text: '个人信息', name: 'Information', icon: 'user' },
+            { text: '安全设置', name: 'Security', icon: 'terminal' },
+          ]"
           :key="name"
           class="tab-nav mr-4"
           :class="{ 'active': routeName === name }"

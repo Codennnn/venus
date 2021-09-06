@@ -4,7 +4,7 @@
     height="270"
     :options="orderSummaryChartOptions"
     :series="series"
-  ></apexchart>
+  />
 </template>
 
 <script>

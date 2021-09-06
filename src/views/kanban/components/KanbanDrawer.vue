@@ -18,45 +18,51 @@
     </template>
     <!-- 卡片标题 -->
     <div>
-      <h4 class="mb-2 text-gray-500">卡片标题</h4>
+      <h4 class="mb-2 text-gray-500">
+        卡片标题
+      </h4>
       <a-input
+        v-model="editData.title"
         size="large"
         placeholder="请输入标题信息"
-        v-model="editData.title"
       />
     </div>
 
     <!-- 日期选择 -->
     <div>
-      <h4 class="mt-6 mb-2 text-gray-500">完成时间</h4>
+      <h4 class="mt-6 mb-2 text-gray-500">
+        完成时间
+      </h4>
       <a-date-picker
+        v-model="editData.time"
         class="w-full"
         size="large"
-        v-model="editData.time"
       />
     </div>
 
     <!-- 颜色标签 -->
     <div class="flex justify-between items-start">
       <div class="w-1/2">
-        <h4 class="mt-6 mb-2 text-gray-500">颜色标签</h4>
+        <h4 class="mt-6 mb-2 text-gray-500">
+          颜色标签
+        </h4>
         <a-dropdown :trigger="['click']">
           <div
             class="w-10 h-10 mr-2 rounded-full cursor-pointer shadow-md"
             :class="`bg-${editData.label}`"
-          ></div>
+          />
           <template #overlay>
             <a-menu>
               <a-menu-item
-                class="flex items-center"
                 v-for="(color, i) in ['primary', 'success', 'warning', 'danger', 'info', 'secondary']"
                 :key="i"
+                class="flex items-center"
                 @click="editData.label = color"
               >
                 <div
                   class="w-5 h-5 mr-2 rounded-full"
                   :class="`bg-${color}`"
-                ></div>
+                />
                 {{ color.toUpperCase() }}
               </a-menu-item>
             </a-menu>
@@ -65,7 +71,9 @@
       </div>
 
       <div class="w-1/2">
-        <h4 class="mt-6 mb-2 text-gray-500">成员</h4>
+        <h4 class="mt-6 mb-2 text-gray-500">
+          成员
+        </h4>
         <div class="flex items-center">
           <a-avatar
             class="mr-3 bg-secondary-light cursor-pointer"
@@ -88,28 +96,34 @@
 
     <!-- 附件上传 -->
     <div>
-      <h4 class="mt-6 mb-2 text-gray-500">添加附件</h4>
+      <h4 class="mt-6 mb-2 text-gray-500">
+        添加附件
+      </h4>
       <a-input
+        v-model="editData.fileName"
         size="large"
         placeholder="请输入附件链接"
-        v-model="editData.fileName"
       >
         <template #addonAfter>
           <div
             class="cursor-pointer"
             @click="uploadAttachment"
-          >或点击上传附件</div>
+          >
+            或点击上传附件
+          </div>
         </template>
       </a-input>
       <input
         id="attachment"
         type="file"
         hidden
-      />
+      >
     </div>
 
     <div class="relative">
-      <h4 class="mt-6 mb-2 text-gray-500">编辑内容</h4>
+      <h4 class="mt-6 mb-2 text-gray-500">
+        编辑内容
+      </h4>
       <a-textarea
         v-model="editData.content"
         placeholder="在这里编辑任务内容"
@@ -117,10 +131,10 @@
       />
       <div class="absolute bottom-0 right-0 m-2 flex items-center">
         <feather
-          class="mr-3 cursor-pointer"
-          size="18"
           v-for="(icon) in ['bold', 'italic', 'link', 'youtube', 'image']"
           :key="icon"
+          class="mr-3 cursor-pointer"
+          size="18"
           :type="icon"
         />
       </div>

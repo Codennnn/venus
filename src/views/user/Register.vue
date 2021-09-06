@@ -10,12 +10,12 @@
         :key="index"
       >
         <a-input
+          v-decorator="decorator"
           class="rigister-input"
           :size="size"
           :type="type"
           :placeholder="placeholder"
           @keydown.enter="onRegister"
-          v-decorator="decorator"
         >
           <template #prefix>
             <feather

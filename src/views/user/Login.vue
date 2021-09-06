@@ -10,13 +10,13 @@
         :key="i"
       >
         <a-input
+          v-decorator="decorator"
           class="login-input"
           :size="size"
           :type="type"
           :placeholder="placeholder"
           @keyup.enter="onLogin"
           @keyup.caps-lock="onSwitchCapture(i, $event)"
-          v-decorator="decorator"
         >
           <template #prefix>
             <feather
@@ -58,16 +58,18 @@
           立即登录
         </a-button>
       </a-form-item>
-      <a-divider class="text-gray-500">或使用以下方式登录</a-divider>
+      <a-divider class="text-gray-500">
+        或使用以下方式登录
+      </a-divider>
       <div class="flex justify-center items-center">
         <img
-          class="app-icon"
           v-for="({ src, name }) in [
-          { name: '微信', src: require('@img/wechat.svg') },
-          { name: '新浪微博', src: require('@img/weibo.svg') },
-          { name: 'GitHub', src: require('@img/github.svg') },
-        ]"
+            { name: '微信', src: require('@img/wechat.svg') },
+            { name: '新浪微博', src: require('@img/weibo.svg') },
+            { name: 'GitHub', src: require('@img/github.svg') },
+          ]"
           :key="name"
+          class="app-icon"
           :src="src"
           :alt="name"
           :title="name"

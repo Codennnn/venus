@@ -4,7 +4,7 @@
     height="40"
     :options="warningLineChartOption"
     :series="series"
-  ></apexchart>
+  />
 </template>
 
 <script>

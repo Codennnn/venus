@@ -4,7 +4,7 @@
     height="260"
     :options="analyticsBarChartOptions"
     :series="series"
-  ></apexchart>
+  />
 </template>
 
 <script>

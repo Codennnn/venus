@@ -7,21 +7,25 @@
     <template #content>
       <div class="w-64">
         <div class="flex justify-between items-center">
-          <div class="text-gray-900">5 条新通知</div>
+          <div class="text-gray-900">
+            5 条新通知
+          </div>
           <div
             class="text-gray-500 hover:primary transition cursor-pointer"
             @click="setAllNoticeRead()"
-          >全部已读</div>
+          >
+            全部已读
+          </div>
         </div>
 
-        <div class="divider"></div>
+        <div class="divider" />
 
         <a-spin :spinning="spinning">
           <ul class="notice-list -mx-4 px-2">
             <li
-              class="p-2 flex items-center text-sm rounded cursor-pointer transition"
               v-for="({ id, title, time, type }) in noticeList"
               :key="id"
+              class="p-2 flex items-center text-sm rounded cursor-pointer transition"
               :class="`hover-${noticeTypes[type].color}`"
             >
               <div
@@ -36,16 +40,22 @@
                 />
               </div>
               <div>
-                <div class="title transition">{{ title }}</div>
-                <div class="text-gray-500">{{ time }}</div>
+                <div class="title transition">
+                  {{ title }}
+                </div>
+                <div class="text-gray-500">
+                  {{ time }}
+                </div>
               </div>
             </li>
           </ul>
         </a-spin>
 
-        <div class="divider"></div>
+        <div class="divider" />
 
-        <div class="primary text-center cursor-pointer opacity-75 hover:opacity-100 transition">查看全部通知</div>
+        <div class="primary text-center cursor-pointer opacity-75 hover:opacity-100 transition">
+          查看全部通知
+        </div>
       </div>
     </template>
     <a-badge

@@ -24,8 +24,8 @@
             <router-view name="login" />
           </a-tab-pane>
           <a-tab-pane
-            force-render
             key="Register"
+            force-render
             tab="注册"
           >
             <router-view name="register" />

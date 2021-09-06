@@ -4,7 +4,7 @@
     height="240"
     :options="multiRadialOptions"
     :series="series"
-  ></apexchart>
+  />
 </template>
 
 <script>

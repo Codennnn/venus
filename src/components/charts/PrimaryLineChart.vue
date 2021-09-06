@@ -4,7 +4,7 @@
     height="40"
     :options="primaryLineChartOption"
     :series="series"
-  ></apexchart>
+  />
 </template>
 
 <script>

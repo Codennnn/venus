@@ -4,7 +4,7 @@
     height="60"
     :options="registrationChartoptions"
     :series="series"
-  ></apexchart>
+  />
 </template>
 
 <script>

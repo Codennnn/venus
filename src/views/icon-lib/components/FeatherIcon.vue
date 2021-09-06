@@ -1,9 +1,9 @@
 <template>
   <div>
     <feather
-      class="mr-6"
       v-for="({ type, stroke, fill, strokeWidth, size = 22 }) in icons"
       :key="type"
+      class="mr-6"
       :type="type"
       :size="size"
       :stroke="stroke"

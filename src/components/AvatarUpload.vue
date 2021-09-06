@@ -33,7 +33,9 @@
             >
           </div>
         </div>
-        <p class="mt-4 text-gray-600">250 X 250</p>
+        <p class="mt-4 text-gray-600">
+          250 X 250
+        </p>
       </div>
 
       <div
@@ -50,7 +52,9 @@
             >
           </div>
         </div>
-        <p class="mt-4 text-gray-600">150 X 150</p>
+        <p class="mt-4 text-gray-600">
+          150 X 150
+        </p>
       </div>
     </div>
 

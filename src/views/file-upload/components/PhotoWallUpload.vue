@@ -1,6 +1,8 @@
 <template>
   <div class="clearfix">
-    <p class="mb-4">用户可以上传图片并在列表中显示缩略图。当上传照片数到达限制后，上传按钮消失</p>
+    <p class="mb-4">
+      用户可以上传图片并在列表中显示缩略图。当上传照片数到达限制后，上传按钮消失
+    </p>
 
     <a-upload
       action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
@@ -12,7 +14,9 @@
     >
       <div v-if="fileList.length < 6">
         <a-icon type="plus" />
-        <div class="mt-2"> 上传 </div>
+        <div class="mt-2">
+          上传
+        </div>
       </div>
     </a-upload>
 
@@ -27,7 +31,7 @@
       <img
         alt="image"
         :src="previewImage"
-      />
+      >
     </a-modal>
   </div>
 </template>

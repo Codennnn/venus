@@ -1,6 +1,8 @@
 <template>
   <div>
-    <p class="mb-4">上传文件为图片，可展示本地缩略图</p>
+    <p class="mb-4">
+      上传文件为图片，可展示本地缩略图
+    </p>
     <a-upload
       multiple
       name="file"

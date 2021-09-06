@@ -18,8 +18,7 @@
         class="circle"
         :title="isSideMenuOpened ? '收起侧边栏' : '展开侧边栏'"
         @click="setSideMenuStatus"
-      >
-      </div>
+      />
     </div>
   </div>
 </template>

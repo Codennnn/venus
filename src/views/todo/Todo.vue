@@ -1,12 +1,12 @@
 <template>
   <div class="todo-app">
     <div class="left">
-      <todo-bar class="h-full"></todo-bar>
+      <todo-bar class="h-full" />
     </div>
     <div class="right">
-      <todo-list class="h-full"></todo-list>
+      <todo-list class="h-full" />
     </div>
-    <todo-drawer></todo-drawer>
+    <todo-drawer />
   </div>
 </template>
 

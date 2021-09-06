@@ -4,7 +4,7 @@
     height="150"
     :options="donutChartOption"
     :series="series"
-  ></apexchart>
+  />
 </template>
 
 <script>

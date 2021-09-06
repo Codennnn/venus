@@ -4,7 +4,7 @@
     height="200"
     :options="growthChartOptions"
     :series="series"
-  ></apexchart>
+  />
 </template>
 
 <script>

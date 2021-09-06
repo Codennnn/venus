@@ -2,7 +2,7 @@
   "name": "venus",
   "version": "1.0.0",
   "description": "A magical vue admin. An out-of-box UI solution for enterprise applications. Newest development stack of vue. Lots of awesome features",
-  "author": "LeoKu <czc12580520@gmail.com>",
+  "author": "LeoKu <czc12580520@gmail.com> (https://leoku.top)",
   "scripts": {
     "start": "yarn serve",
     "serve": "vue-cli-service serve",
@@ -11,37 +11,51 @@
     "build:modern": "vue-cli-service build --modern",
     "build:preview": "vue-cli-service build --mode preview",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
+    "deps": "yarn upgrade-interactive --latest",
     "lint": "vue-cli-service lint",
+    "lint:es": "eslint \"**/*.{mjs,js,jsx,ts,tsx,vue}\"",
     "test": "vue-cli-service test:unit"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "dependencies": {
     "@amap/amap-jsapi-loader": "0.0.1",
-    "@icon-park/vue": "^1.0.11",
-    "ant-design-vue": "^1.6.0",
-    "antd-dayjs-webpack-plugin": "^1.0.0",
-    "apexcharts": "^3.19.2",
+    "@icon-park/vue": "^1.3.5",
+    "ant-design-vue": "^1.7.8",
+    "antd-dayjs-webpack-plugin": "^1.0.6",
+    "apexcharts": "^3.28.1",
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
-    "dayjs": "^1.8.27",
+    "dayjs": "^1.10.6",
     "echarts": "^4.9.0",
     "feather-icons": "^4.28.0",
     "lodash.clonedeep": "^4.5.0",
     "lodash.debounce": "^4.0.8",
     "mockjs": "^1.1.0",
     "nprogress": "^0.2.0",
-    "screenfull": "^5.0.2",
+    "screenfull": "^5.1.0",
     "tailwindcss": "^1.4.6",
-    "vue": "^2.6.11",
-    "vue-apexcharts": "^1.5.3",
+    "vue": "^2.6.14",
+    "vue-apexcharts": "^1.6.2",
     "vue-baidu-map": "^0.21.22",
-    "vue-cropper": "^0.5.5",
-    "vue-feather": "^1.0.0",
+    "vue-cropper": "^0.5.6",
+    "vue-feather": "^1.1.1",
     "vue-highlightjs": "^1.3.3",
     "vue-quill-editor": "^3.0.6",
-    "vue-router": "^3.1.6",
+    "vue-router": "^3.5.2",
     "vue2-perfect-scrollbar": "^1.5.0",
-    "vuedraggable": "^2.23.2",
-    "vuex": "^3.1.3",
+    "vuedraggable": "^2.24.3",
+    "vuex": "^3.6.2",
     "vuex-persistedstate": "^3.0.1"
   },
   "devDependencies": {
@@ -59,25 +73,16 @@
     "babel-plugin-transform-remove-console": "^6.9.4",
     "compression-webpack-plugin": "^4.0.0",
     "eslint": "^6.7.2",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
     "less-loader": "^6.1.0",
-    "node-sass": "^4.12.0",
+    "prettier": "^2.3.2",
     "push-dir": "^0.4.1",
+    "sass": "^1.39.0",
     "sass-loader": "^10.0.3",
-    "vue-template-compiler": "^2.6.11",
+    "vue-template-compiler": "^2.6.14",
     "webpack-bundle-analyzer": "^3.8.0"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   }
 }

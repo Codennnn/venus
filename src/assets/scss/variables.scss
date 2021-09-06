@@ -1,3 +1,5 @@
+@use "sass:math";
+
 :root {
   --primary: 100, 133, 255;
   --secondary: 71, 95, 123;
@@ -70,5 +72,5 @@ $header-shadow: 0 4px 20px 0 rgba(0, 0, 0, .05);
 $transition: all 0.3s;
 
 @function pxTorem($px) {
-  @return $px / $root-font-size * 1rem;
+  @return math.div($px, $root-font-size) * 1rem;
 }

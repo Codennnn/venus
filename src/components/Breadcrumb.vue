@@ -3,7 +3,9 @@
     <a-breadcrumb-item
       v-for="({ title }, i) in breadcrumbList"
       :key="i"
-    >{{ title }}</a-breadcrumb-item>
+    >
+      {{ title }}
+    </a-breadcrumb-item>
   </a-breadcrumb>
 </template>
 

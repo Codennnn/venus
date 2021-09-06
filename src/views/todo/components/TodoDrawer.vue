@@ -37,9 +37,9 @@
             <template #overlay>
               <a-menu>
                 <a-menu-item
-                  class="text-center text-sm text-gray-700"
                   v-for="({ text }, i) in [{text:'添加到其他项目'},{text:'复制为新任务'},{text:'丢弃该任务'}]"
                   :key="i"
+                  class="text-center text-sm text-gray-700"
                   @click="$message.success(text)"
                 >
                   {{ text }}
@@ -58,7 +58,9 @@
     </template>
     <!-- 标题信息 -->
     <div class="sec">
-      <h4 class="sec__title">标题信息</h4>
+      <h4 class="sec__title">
+        标题信息
+      </h4>
       <a-textarea
         v-model="currTodo.title"
         placeholder="请输入标题信息"
@@ -68,22 +70,26 @@
 
     <!-- 日期选择 -->
     <div class="sec">
-      <h4 class="sec__title">任务周期</h4>
+      <h4 class="sec__title">
+        任务周期
+      </h4>
       <a-range-picker
-        class="w-full"
         v-model="currTodo.date"
+        class="w-full"
       />
     </div>
 
     <!-- 任务标签 -->
     <div class="sec">
-      <h4 class="sec__title">任务标签</h4>
+      <h4 class="sec__title">
+        任务标签
+      </h4>
       <a-select
+        v-model="currTodo.tag"
         mode="tags"
         size="large"
         class="w-full text-base"
         placeholder="请选择任务标签（可选）"
-        v-model="currTodo.tag"
       >
         <a-select-option
           v-for="({ id, label }) in [{id:'1',label:'前端开发'}, {id:'2',label:'后端开发'}, {id:'3',label:'UI 设计'}, {id:'4',label:'架构设计'}]"
@@ -111,15 +117,15 @@ import _clonedeep from 'lodash.clonedeep'
 export default {
   name: 'TodoDrawer',
 
+  data: () => ({
+    currTodo: {},
+  }),
+
   computed: {
     isTodoDrawerOpened() {
       return this.$store.state.todo.isTodoDrawerOpened
     },
   },
-
-  data: () => ({
-    currTodo: {},
-  }),
 
   watch: {
     '$store.state.todo.currEditTodo': {

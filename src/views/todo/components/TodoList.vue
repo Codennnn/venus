@@ -29,26 +29,30 @@
         style="min-width: 800px;"
       >
         <li
-          class="todo-list__item"
           v-for="(todo) in filterItems"
           :key="todo.id"
+          class="todo-list__item"
           :class="{ 'todo-list__item-active': todo.id === currEditItem.id }"
           @click="onOpenDrawer(todo)"
         >
           <a-checkbox
-            class="mr-4"
             v-model="todo.done"
+            class="mr-4"
             @click.stop
           />
-          <div class="flex-1 truncate">{{ todo.title }}</div>
+          <div class="flex-1 truncate">
+            {{ todo.title }}
+          </div>
           <div class="ml-auto flex items-center flex-wrap">
             <div class="flex-1 flex items-center select-none">
               <div
-                class="ml-2 px-2 py-1 rounded-lg text-sm"
                 v-for="(it) in todo.tag"
                 :key="it"
+                class="ml-2 px-2 py-1 rounded-lg text-sm"
                 :class="[tags[it].color, `bg-${tags[it].color}-light`]"
-              >{{ tags[it].text }}</div>
+              >
+                {{ tags[it].text }}
+              </div>
             </div>
             <feather
               class="ml-2 transition"

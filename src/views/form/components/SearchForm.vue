@@ -7,9 +7,9 @@
     >
       <div class="flex flex-wrap">
         <div
-          class="search-item"
           v-for="i in 10"
           :key="i"
+          class="search-item"
           :style="{ display: i < count ? 'block' : 'none' }"
         >
           <a-form-item :label="`字段 ${i}`">

@@ -2,22 +2,26 @@
   <div>
     <div class="section-card mb-6 p-0">
       <div class="mb-4 px-6 pt-6">
-        <h3 class="section-card__title">Snow 主题</h3>
+        <h3 class="section-card__title">
+          Snow 主题
+        </h3>
         <p>Snow 是基于简洁且扁平工具栏的主题</p>
       </div>
       <quill-editor
-        class="snow-theme"
         v-model="snowContent"
+        class="snow-theme"
         :options="editOptions"
       />
     </div>
 
     <div class="section-card">
-      <h3 class="section-card__title">Bubble 主题</h3>
+      <h3 class="section-card__title">
+        Bubble 主题
+      </h3>
       <p>Bubble 是一个简单的基于 tooltip 气泡的主题。</p>
       <quill-editor
-        class="bubble-theme"
         v-model="bubbleContent"
+        class="bubble-theme"
         :options="{
           theme: 'bubble',
           placeholder: '输入文本内容...',

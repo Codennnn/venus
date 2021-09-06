@@ -4,7 +4,7 @@
     height="110"
     :options="barNegativeChartoptions"
     :series="series"
-  ></apexchart>
+  />
 </template>
 
 <script>
