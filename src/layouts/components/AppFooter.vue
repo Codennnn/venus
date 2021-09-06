@@ -24,6 +24,7 @@ export default {
 <style lang="scss" scoped>
 .app-footer {
   @apply flex justify-between items-center text-gray-500;
+
   height: $footer-height;
 }
 </style>

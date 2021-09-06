@@ -18,8 +18,8 @@
 // 颜色
 $primary: #6485ff;
 $secondary: #475f7b;
-$success : #39da8a;
-$warning:#fdac41;
+$success: #39da8a;
+$warning: #fdac41;
 $danger: #ff5b5c;
 $info: #00cfdd;
 $primary-light: #e2ecff;
@@ -49,7 +49,8 @@ $sider-footer-height: $header-height;
 $sider-menu-height: 100vh - #{$sider-header-height} - #{$sider-footer-height};
 $full-height: calc(100vh - #{$header-height} - #{$footer-height} - 2 * #{$section-gap});
 
-$color-map: (primary: $primary,
+$color-map: (
+  primary: $primary,
   secondary: $secondary,
   success: $success,
   warning: $warning,
@@ -60,17 +61,18 @@ $color-map: (primary: $primary,
   success-light: $success-light,
   warning-light: $warning-light,
   danger-light: $danger-light,
-  info-light: $info-light);
+  info-light: $info-light,
+);
 
 // 阴影
 $light-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
 $base-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
 $heavy-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.06);
-$header-shadow: 0 4px 20px 0 rgba(0, 0, 0, .05);
+$header-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
 
 // 动画
 $transition: all 0.3s;
 
-@function pxTorem($px) {
+@function px2rem($px) {
   @return math.div($px, $root-font-size) * 1rem;
 }

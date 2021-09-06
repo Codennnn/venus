@@ -79,7 +79,7 @@
                 <a-button type="primary"> 周度 </a-button>
               </div>
             </h3>
-            <div style="margin: 0 -5px -6px -5px; over-flow: hidden" class="mt-auto">
+            <div style="margin: 0 -5px -6px -5px; overflow: hidden" class="mt-auto">
               <order-summary-chart />
             </div>
           </div>
@@ -399,6 +399,7 @@ export default {
       @apply flex-1 py-3 flex flex-col items-center justify-center;
       .icon {
         @apply w-12 h-12 mb-2 flex justify-center items-center rounded-full;
+
         border-radius: 50%;
         &.success {
           color: $success;

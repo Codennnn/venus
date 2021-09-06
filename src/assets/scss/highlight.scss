@@ -7,7 +7,10 @@
 .hljs-template-variable,
 .hljs-attribute,
 .hljs-tag,
-.hljs-name,
+.hljs-name {
+  color: rgba($primary, 1);
+}
+
 .hljs-regexp,
 .hljs-link,
 .hljs-name,
@@ -44,9 +47,9 @@
 
 .hljs-deletion,
 .hljs-addition {
-  color: rgba($danger, 1);
   display: inline-block;
   width: 100%;
+  color: rgba($danger, 1);
 }
 
 .hljs-deletion {
@@ -59,15 +62,15 @@
 
 .hljs {
   display: block;
-  overflow-x: auto;
-  background: rgba($secondary, .08);
-  color: rgba($secondary, 1);
   padding: 1em;
-  font-family: Rubik;
+  overflow-x: auto;
+  color: rgba($secondary, 1);
   font-size: 1rem;
+  font-family: Rubik;
   letter-spacing: 1px;
   word-spacing: 2px;
-  border-radius: .5rem;
+  background: rgba($secondary, 0.08);
+  border-radius: 0.5rem;
 }
 
 .hljs-emphasis {

@@ -145,28 +145,29 @@ export default {
       background-color: $primary-light;
     }
   }
+
   &.ant-menu .ant-menu-item-selected {
     background-color: $primary-light;
   }
 
   .ant-menu-item {
     &::after {
-      border-radius: 1rem 0 0 1rem;
       border-right: 5px solid $primary;
+      border-radius: 1rem 0 0 1rem;
     }
   }
 
   .ant-menu-item,
   .ant-menu-submenu {
     margin-bottom: 15px !important;
+
     &:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected) {
       color: $secondary;
     }
-  }
 
-  .ant-menu-item,
-  .ant-menu-submenu .ant-menu-submenu-title {
-    @apply text-base;
+    & .ant-menu-submenu-title {
+      @apply text-base;
+    }
   }
 
   &.ant-menu-inline-collapsed {
@@ -185,14 +186,17 @@ export default {
   @apply w-full;
   &-header {
     @apply relative flex items-center overflow-hidden;
+
     height: $sider-header-height;
     padding: 0 23px;
 
     .circle-area {
       @apply relative ml-auto;
+
       transition: $transition;
       &.menu-close {
         @apply absolute z-50 left-0 w-full h-full ml-0 flex items-center justify-center opacity-0;
+
         background: $app-bg;
         &:hover {
           opacity: 1;
@@ -200,15 +204,16 @@ export default {
       }
       .circle {
         @apply relative w-5 h-5 rounded-full;
+
         border: 2px solid $primary;
         cursor: pointer;
         &::after {
-          content: '';
-          @apply absolute w-2 h-2 rounded-full;
-          border: 2px solid $primary;
           top: 50%;
           left: 50%;
+          border: 2px solid $primary;
           transform: translate(-50%, -50%);
+          content: '';
+          @apply absolute w-2 h-2 rounded-full;
         }
       }
     }

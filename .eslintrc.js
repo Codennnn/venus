@@ -38,7 +38,6 @@ module.exports = {
     'public',
     'build',
     'dist',
-    'yarn*',
     '!.eslintrc.js',
     '!.prettierrc.js',
     '!.stylelintrc.js',

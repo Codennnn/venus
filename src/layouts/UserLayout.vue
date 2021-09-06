@@ -53,6 +53,7 @@ export default {
 <style lang="scss" scoped>
 .user-layout {
   @apply min-h-screen flex flex-col items-center justify-center;
+
   background: center no-repeat url(~@/assets/images/user_layout_bg.svg);
 
   &-section {
@@ -63,6 +64,7 @@ export default {
     @media screen and (max-width: 450px) {
       width: 85%;
     }
+
     width: 450px;
 
     .tabs::v-deep {

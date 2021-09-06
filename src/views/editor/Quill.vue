@@ -89,23 +89,24 @@ export default {
   border: none;
   .ql-toolbar {
     @apply py-4 border-none;
+
     box-shadow: $header-shadow;
     .ql-font {
       span[data-value='微软雅黑']::before {
-        content: '微软雅黑' !important;
         font-family: '微软雅黑';
+        content: '微软雅黑' !important;
       }
       span[data-value='黑体']::before {
-        content: '黑体' !important;
         font-family: '黑体';
+        content: '黑体' !important;
       }
       span[data-value='宋体']::before {
-        content: '宋体' !important;
         font-family: '宋体';
+        content: '宋体' !important;
       }
       span[data-value='Arial']::before {
-        content: 'Arial' !important;
         font-family: 'Arial';
+        content: 'Arial' !important;
       }
     }
   }
@@ -145,6 +146,7 @@ export default {
   @apply mt-4 rounded;
   .ql-editor {
     @apply text-base bg-gray-100;
+
     min-height: 100px;
   }
 }

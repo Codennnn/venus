@@ -101,7 +101,7 @@
           </div>
         </div>
 
-        <div v-show="isTaskOpen" class="view-all-btn" style="bottom: 10px; right: 10px">
+        <div v-show="isTaskOpen" class="view-all-btn" style="right: 10px; bottom: 10px">
           <div class="flex items-center text-gray" @click.stop="viewAll()">
             <span class="mr-1 text-sm">查看全部</span>
             <feather size="16" type="chevron-right" />
@@ -150,9 +150,11 @@ export default {
 <style lang="scss" scoped>
 .task {
   @apply absolute bottom-0 left-0 w-full h-full rounded-lg whitespace-no-wrap overflow-hidden;
+
   transition: $transition;
   &.is-closed {
     @apply flex items-center justify-center cursor-pointer;
+
     color: $primary;
     background: $primary-light;
   }
@@ -175,6 +177,7 @@ export default {
 
   .view-all-btn {
     @apply absolute pl-4 pr-3 py-1 flex items-center rounded-full cursor-pointer;
+
     color: rgba($secondary, 0.8);
     background: rgba($secondary, 0.06);
   }

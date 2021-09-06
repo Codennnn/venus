@@ -20,6 +20,7 @@ img {
 
 #app {
   @apply min-h-screen;
+
   background: $app-bg;
 }
 
@@ -32,7 +33,8 @@ img {
 
   &__title {
     @apply mb-3 text-2xl font-bold;
-    color: rgba($secondary, .8);
+
+    color: rgba($secondary, 0.8);
   }
 }
 

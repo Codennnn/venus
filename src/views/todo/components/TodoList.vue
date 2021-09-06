@@ -120,9 +120,11 @@ export default {
 
 .todo-list {
   @apply h-full overflow-hidden;
+
   height: calc(100% - 58px);
   &__item {
     @apply px-6 py-5 flex items-center cursor-pointer;
+
     transition: $transition;
     &:hover {
       box-shadow: 0 15px 30px -5px rgba($secondary, 0.1);

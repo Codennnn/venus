@@ -115,6 +115,7 @@ export default {
 
 .map-demo-style {
   @apply w-full;
+
   height: 300px;
 }
 </style>

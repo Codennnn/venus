@@ -14,6 +14,7 @@
     "deps": "yarn upgrade-interactive --latest",
     "lint": "vue-cli-service lint",
     "lint:es": "eslint \"**/*.{mjs,js,jsx,ts,tsx,vue}\"",
+    "lint:style": "stylelint \"./src/**/*.{css,scss,vue}\"",
     "test": "vue-cli-service test:unit"
   },
   "browserslist": {
@@ -82,6 +83,13 @@
     "push-dir": "^0.4.1",
     "sass": "^1.39.0",
     "sass-loader": "^10.0.3",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-prettier": "^1.2.0",
+    "stylelint-scss": "^3.20.1",
     "vue-template-compiler": "^2.6.14",
     "webpack-bundle-analyzer": "^3.8.0"
   }

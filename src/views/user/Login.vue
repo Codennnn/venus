@@ -135,12 +135,13 @@ export default {
 
   .app-icon {
     @apply mx-4 w-6 cursor-pointer;
+
+    opacity: 0.8;
     filter: grayscale(100%);
     transition: $transition;
-    opacity: 0.8;
     &:hover {
-      filter: none;
       opacity: 1;
+      filter: none;
     }
   }
 }

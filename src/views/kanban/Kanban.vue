@@ -313,6 +313,7 @@ export default {
   @apply flex flex-wrap items-start justify-start;
   &-col {
     @apply mr-8 mb-4 p-4 bg-gray-200 rounded-lg list-none;
+
     width: 300px;
     &__input {
       margin-right: 1rem;
@@ -326,25 +327,28 @@ export default {
     }
     &__item {
       @apply relative mb-4 p-3 pl-4 rounded bg-white cursor-pointer;
+
       box-shadow: 0 10px 15px -5px rgba($secondary, 0.1);
 
       @each $color in primary, secondary, success, warning, danger, info {
         &[data-border='#{$color}'] {
           &::before {
             @apply absolute top-0 left-0 h-full w-1 overflow-hidden;
-            content: '';
+
             background: map-get($color-map, $color);
+            content: '';
           }
         }
       }
     }
     &__avatar {
       @apply relative -ml-2 cursor-pointer;
-      transition: $transition;
+
       border: 2px solid #fff;
+      transition: $transition;
       &:hover {
-        transform: translateY(-3px);
         z-index: 10;
+        transform: translateY(-3px);
       }
     }
   }

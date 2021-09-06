@@ -22,8 +22,8 @@ export default {
 }
 .flip-list-enter,
 .flip-list-leave-to {
-  opacity: 0;
   transform: translateY(30px);
+  opacity: 0;
 }
 .flip-list-move {
   transition: transform 1s;

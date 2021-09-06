@@ -25,6 +25,7 @@ export default {
 <style lang="scss" scoped>
 .todo-app {
   @apply relative w-full flex bg-white rounded-lg overflow-hidden;
+
   height: $full-height;
   min-height: 500px;
 
@@ -37,6 +38,7 @@ export default {
 
   .right {
     @apply h-full;
+
     width: 78%;
   }
 }

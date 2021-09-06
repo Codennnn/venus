@@ -54,6 +54,7 @@ export default {
 <style lang="scss" scoped>
 .tab-nav {
   @apply w-40 h-10 flex justify-center items-center rounded cursor-pointer;
+
   color: $secondary;
   background: $secondary-light;
   &.active {
