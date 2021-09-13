@@ -46,7 +46,7 @@ $header-height: 69px;
 $footer-height: 64px;
 $sider-header-height: $header-height;
 $sider-footer-height: $header-height;
-$sider-menu-height: 100vh - #{$sider-header-height} - #{$sider-footer-height};
+$sider-menu-height: calc(100vh - #{$sider-header-height} - #{$sider-footer-height});
 $full-height: calc(100vh - #{$header-height} - #{$footer-height} - 2 * #{$section-gap});
 
 $color-map: (

@@ -117,7 +117,7 @@ export default {
 
 <style lang="scss" scoped>
 .menu-scroll-wrapper {
-  height: calc(#{$sider-menu-height});
+  height: $sider-menu-height;
   overflow: hidden;
 }
 
