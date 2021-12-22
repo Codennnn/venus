@@ -5,7 +5,7 @@
     rel="noopener noreferrer">
     <img
       width="120"
-      src="https://gitee.com/chinesee/images/raw/master/magic/venus-logo.png"
+      src="./img/venus-logo.png"
       alt="Venus Logo">
   </a>
 </p>
