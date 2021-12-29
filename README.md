@@ -23,6 +23,10 @@ Venus 是由 Vue.js 驱动的中后台系统模板，凝聚了许多常用功能
 
 ## 在线预览
 
+两种访问方式，分别部署于 Vercel 和 GitHub Pages。
+
+https://venus-ten.vercel.app [Vercel，推荐，访问速度较快]
+
 https://venus.leoku.top/ [GitHub Pages]
 
 ## 文档地址
