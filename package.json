@@ -2,7 +2,7 @@
   "name": "venus",
   "version": "1.0.0",
   "description": "A magical vue admin. An out-of-box UI solution for enterprise applications. Newest development stack of vue. Lots of awesome features",
-  "author": "LeoKu <czc12580520@gmail.com> (https://leoku.top)",
+  "author": "LeoKu <leokudev@gmail.com> (https://leoku.top)",
   "scripts": {
     "start": "yarn serve",
     "serve": "vue-cli-service serve",
@@ -18,11 +18,7 @@
     "test": "vue-cli-service test:unit"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
